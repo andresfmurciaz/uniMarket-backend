@@ -1,0 +1,308 @@
+-- Generado por Oracle SQL Developer Data Modeler 21.4.2.059.0838
+--   en:        2023-03-09 09:05:06 COT
+--   sitio:      Oracle Database 11g
+--   tipo:      Oracle Database 11g
+
+
+
+-- predefined type, no DDL - MDSYS.SDO_GEOMETRY
+
+-- predefined type, no DDL - XMLTYPE
+
+
+CREATE TABLE autorizacion (
+    codigoautorizacion      INT NOT NULL,
+    moderador_codigo        INT NOT NULL,
+    producto_codigoproducto INT NOT NULL,
+    descripcion             TEXT NOT NULL,
+    fecha                   DATE NOT NULL
+);
+ALTER TABLE autorizacion ADD CONSTRAINT autorizacion_pk PRIMARY KEY ( codigoautorizacion );
+
+
+
+
+CREATE TABLE categoriaproducto (
+    categorias_codigocategoria INT NOT NULL,
+    producto_codigoproducto    INT NOT NULL
+);
+
+CREATE TABLE categorias (
+    codigocategoria INT NOT NULL,
+    nombre          VARCHAR(100) NOT NULL
+);
+
+ALTER TABLE categorias ADD CONSTRAINT categorias_pk PRIMARY KEY ( codigocategoria );
+
+
+
+
+CREATE TABLE centro_ayuda (
+    codigoayuda           INT NOT NULL,
+    mensaje               TEXT NOT NULL,
+    moderador_codigo      INT NOT NULL,
+    factura_codigofactura INT NOT NULL,
+    usuario_cedula        INT NOT NULL
+);
+
+ALTER TABLE centro_ayuda ADD CONSTRAINT centro_ayuda_pk PRIMARY KEY ( codigoayuda );
+
+
+
+
+
+
+
+
+
+
+
+------------------------------------------------------------------------------------------------------
+
+
+
+CREATE TABLE autorizacion (
+    codigoautorizacion      INTEGER NOT NULL,
+    moderador_codigo        NUMBER NOT NULL,
+    producto_codigoproducto NUMBER NOT NULL,
+    descripcion             CLOB NOT NULL,
+    fecha                   DATE NOT NULL
+);
+
+ALTER TABLE autorizacion ADD CONSTRAINT autorizacion_pk PRIMARY KEY ( codigoautorizacion );
+
+
+
+CREATE TABLE categoriaproducto (
+    categorias_codigocategoria NUMBER(100) NOT NULL,
+    producto_codigoproducto    NUMBER NOT NULL
+);
+
+CREATE TABLE categorias (
+    codigocategoria NUMBER(100) NOT NULL,
+    nombre          VARCHAR2(100) NOT NULL
+);
+
+ALTER TABLE categorias ADD CONSTRAINT categorias_pk PRIMARY KEY ( codigocategoria );
+
+
+CREATE TABLE centro_ayuda (
+    codigoayuda           NUMBER(100) NOT NULL,
+    mensaje               CLOB NOT NULL,
+    moderador_codigo      NUMBER NOT NULL,
+    factura_codigofactura NUMBER(100) NOT NULL,
+    usuario_cedula        NUMBER(10) NOT NULL
+);
+
+ALTER TABLE centro_ayuda ADD CONSTRAINT centro_ayuda_pk PRIMARY KEY ( codigoayuda );
+----
+
+
+CREATE TABLE comentario (
+    codigocomentario        NUMBER(50) NOT NULL,
+    descripcion             CLOB NOT NULL,
+    producto_codigoproducto NUMBER NOT NULL,
+    usuario_cedula          NUMBER(10) NOT NULL,
+    fecha                   DATE NOT NULL
+);
+
+ALTER TABLE comentario ADD CONSTRAINT comentario_pk PRIMARY KEY ( codigocomentario );
+
+CREATE TABLE compra (
+    codigocompra            NUMBER(100) NOT NULL,
+    usuario_cedula          NUMBER(10) NOT NULL,
+    valortotal              NUMBER NOT NULL,
+    fechacompra             DATE NOT NULL,
+    metododepago_codigopago INTEGER NOT NULL
+);
+
+ALTER TABLE compra ADD CONSTRAINT compra_pk PRIMARY KEY ( codigocompra );
+
+CREATE TABLE cuentapremium (
+    codigopremium  NUMBER(100) NOT NULL,
+    usuario_cedula NUMBER(10) NOT NULL,
+    nombre         VARCHAR2(200) NOT NULL
+);
+
+CREATE UNIQUE INDEX cuentapremium__idx ON
+    cuentapremium (
+        usuario_cedula
+    ASC );
+
+ALTER TABLE cuentapremium ADD CONSTRAINT cuentapremium_pk PRIMARY KEY ( codigopremium );
+
+CREATE TABLE detallecompra (
+    codigodetcom            NUMBER(100) NOT NULL,
+    producto_codigoproducto NUMBER NOT NULL,
+    compra_codigocompra     NUMBER(100) NOT NULL,
+    precioproducto          NUMBER NOT NULL,
+    cantidadproducto        INTEGER NOT NULL
+);
+
+ALTER TABLE detallecompra ADD CONSTRAINT detallecompra_pk PRIMARY KEY ( codigodetcom );
+
+CREATE TABLE favorito (
+    producto_codigoproducto NUMBER NOT NULL,
+    usuario_cedula          NUMBER(10) NOT NULL
+);
+
+CREATE TABLE imagen (
+    codigoimagen            NUMBER(100) NOT NULL,
+    url                     VARCHAR2(200) NOT NULL,
+    producto_codigoproducto NUMBER NOT NULL
+);
+
+ALTER TABLE imagen ADD CONSTRAINT imagen_pk PRIMARY KEY ( codigoimagen );
+
+CREATE TABLE metododepago (
+    codigopago INTEGER NOT NULL,
+    nombre     VARCHAR2(150) NOT NULL
+);
+
+ALTER TABLE metododepago ADD CONSTRAINT metododepago_pk PRIMARY KEY ( codigopago );
+
+CREATE TABLE moderador (
+    codigo     NUMBER NOT NULL,
+    nombre     VARCHAR2(100) NOT NULL,
+    email      VARCHAR2(150) NOT NULL,
+    contraseña VARCHAR2(100) NOT NULL
+);
+
+ALTER TABLE moderador ADD CONSTRAINT moderador_pk PRIMARY KEY ( codigo );
+
+CREATE TABLE producto (
+    codigoproducto NUMBER NOT NULL,
+    nombre         VARCHAR2(100 CHAR) NOT NULL,
+    descripcion    CLOB NOT NULL,
+    precio         NUMBER NOT NULL,
+    fechalimite    DATE NOT NULL,
+    disponiblidad  INTEGER NOT NULL,
+    estado         VARCHAR2(50) NOT NULL,
+    usuario_cedula NUMBER(10) NOT NULL
+);
+
+ALTER TABLE producto ADD CONSTRAINT producto_pk PRIMARY KEY ( codigoproducto );
+
+CREATE TABLE usuario (
+    cedula     NUMBER(10) NOT NULL,
+    nombre     VARCHAR2(100) NOT NULL,
+    email      VARCHAR2(150) NOT NULL,
+    telefono   NUMBER(10) NOT NULL,
+    direccion  VARCHAR2(200) NOT NULL,
+    contraseña VARCHAR2(50) NOT NULL
+);
+
+ALTER TABLE usuario ADD CONSTRAINT usuario_pk PRIMARY KEY ( cedula );
+
+ALTER TABLE autorizacion
+    ADD CONSTRAINT autorizacion_moderador_fk FOREIGN KEY ( moderador_codigo )
+        REFERENCES moderador ( codigo );
+
+ALTER TABLE autorizacion
+    ADD CONSTRAINT autorizacion_producto_fk FOREIGN KEY ( producto_codigoproducto )
+        REFERENCES producto ( codigoproducto );
+
+ALTER TABLE categoriaproducto
+    ADD CONSTRAINT categoriaproducto_categori_fk FOREIGN KEY ( categorias_codigocategoria )
+        REFERENCES categorias ( codigocategoria );
+
+ALTER TABLE categoriaproducto
+    ADD CONSTRAINT categoriaproducto_producto_fk FOREIGN KEY ( producto_codigoproducto )
+        REFERENCES producto ( codigoproducto );
+
+ALTER TABLE centro_ayuda
+    ADD CONSTRAINT centro_ayuda_moderador_fk FOREIGN KEY ( moderador_codigo )
+        REFERENCES moderador ( codigo );
+
+ALTER TABLE centro_ayuda
+    ADD CONSTRAINT centro_ayuda_usuario_fk FOREIGN KEY ( usuario_cedula )
+        REFERENCES usuario ( cedula );
+
+ALTER TABLE comentario
+    ADD CONSTRAINT comentario_producto_fk FOREIGN KEY ( producto_codigoproducto )
+        REFERENCES producto ( codigoproducto );
+
+ALTER TABLE comentario
+    ADD CONSTRAINT comentario_usuario_fk FOREIGN KEY ( usuario_cedula )
+        REFERENCES usuario ( cedula );
+
+ALTER TABLE compra
+    ADD CONSTRAINT compra_metododepago_fk FOREIGN KEY ( metododepago_codigopago )
+        REFERENCES metododepago ( codigopago );
+
+ALTER TABLE compra
+    ADD CONSTRAINT compra_usuario_fk FOREIGN KEY ( usuario_cedula )
+        REFERENCES usuario ( cedula );
+
+ALTER TABLE cuentapremium
+    ADD CONSTRAINT cuentapremium_usuario_fk FOREIGN KEY ( usuario_cedula )
+        REFERENCES usuario ( cedula );
+
+ALTER TABLE detallecompra
+    ADD CONSTRAINT detallecompra_compra_fk FOREIGN KEY ( compra_codigocompra )
+        REFERENCES compra ( codigocompra );
+
+ALTER TABLE detallecompra
+    ADD CONSTRAINT detallecompra_producto_fk FOREIGN KEY ( producto_codigoproducto )
+        REFERENCES producto ( codigoproducto );
+
+ALTER TABLE favorito
+    ADD CONSTRAINT favorito_producto_fk FOREIGN KEY ( producto_codigoproducto )
+        REFERENCES producto ( codigoproducto );
+
+ALTER TABLE favorito
+    ADD CONSTRAINT favorito_usuario_fk FOREIGN KEY ( usuario_cedula )
+        REFERENCES usuario ( cedula );
+
+ALTER TABLE imagen
+    ADD CONSTRAINT imagen_producto_fk FOREIGN KEY ( producto_codigoproducto )
+        REFERENCES producto ( codigoproducto );
+
+ALTER TABLE producto
+    ADD CONSTRAINT producto_usuario_fk FOREIGN KEY ( usuario_cedula )
+        REFERENCES usuario ( cedula );
+
+
+
+-- Informe de Resumen de Oracle SQL Developer Data Modeler: 
+-- 
+-- CREATE TABLE                            14
+-- CREATE INDEX                             1
+-- ALTER TABLE                             29
+-- CREATE VIEW                              0
+-- ALTER VIEW                               0
+-- CREATE PACKAGE                           0
+-- CREATE PACKAGE BODY                      0
+-- CREATE PROCEDURE                         0
+-- CREATE FUNCTION                          0
+-- CREATE TRIGGER                           0
+-- ALTER TRIGGER                            0
+-- CREATE COLLECTION TYPE                   0
+-- CREATE STRUCTURED TYPE                   0
+-- CREATE STRUCTURED TYPE BODY              0
+-- CREATE CLUSTER                           0
+-- CREATE CONTEXT                           0
+-- CREATE DATABASE                          0
+-- CREATE DIMENSION                         0
+-- CREATE DIRECTORY                         0
+-- CREATE DISK GROUP                        0
+-- CREATE ROLE                              0
+-- CREATE ROLLBACK SEGMENT                  0
+-- CREATE SEQUENCE                          0
+-- CREATE MATERIALIZED VIEW                 0
+-- CREATE MATERIALIZED VIEW LOG             0
+-- CREATE SYNONYM                           0
+-- CREATE TABLESPACE                        0
+-- CREATE USER                              0
+-- 
+-- DROP TABLESPACE                          0
+-- DROP DATABASE                            0
+-- 
+-- REDACTION POLICY                         0
+-- 
+-- ORDS DROP SCHEMA                         0
+-- ORDS ENABLE SCHEMA                       0
+-- ORDS ENABLE OBJECT                       0
+-- 
+-- ERRORS                                   0
+-- WARNINGS                                 0
