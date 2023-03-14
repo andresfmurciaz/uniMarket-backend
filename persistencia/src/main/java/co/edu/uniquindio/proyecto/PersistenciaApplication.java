@@ -8,7 +8,7 @@ public class PersistenciaApplication {
         SpringApplication.run(PersistenciaApplication.class, args);
 
 
-        //hola soy jose es una pruebade git
+        //hola soy jose es una pruebade git}
 
     }
 }
