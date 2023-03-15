@@ -14,7 +14,7 @@ import java.io.Serializable;
 @EqualsAndHashCode
 @NoArgsConstructor
 @ToString
-public class Moderador implements Serializable
+public class Moderador extends Persona implements Serializable
 {
     @Id
     //autoinclementable
