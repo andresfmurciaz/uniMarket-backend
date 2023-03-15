@@ -6,6 +6,7 @@ import javax.persistence.*;
 import java.io.Serializable;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.util.List;
 
 @Entity
 @Getter
@@ -26,6 +27,19 @@ public class Compra implements Serializable
     //para dejar el atributo no null y con un tamaño de caracteres
     @Column(nullable = false , length = 100)
     private String medio_pago;
+
+
+    //duda
+    //una compra solo tiene un detalle
+    @ManyToOne
+    private Detalle_Compra detalleCompra;
+
+
+
+
+    //una
+    @OneToMany (mappedBy = "compra")
+    private List<Usuario> usuarios;
 
 
 

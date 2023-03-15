@@ -5,6 +5,7 @@ import lombok.*;
 import javax.persistence.*;
 import javax.validation.constraints.Positive;
 import java.io.Serializable;
+import java.util.List;
 
 @Entity
 @Getter
@@ -25,5 +26,21 @@ public class Detalle_Compra implements Serializable
     //para dejar el atributo no null
     @Column(nullable = false)
     private Integer unidades;
+
+
+
+    //una detalle_compra tiene muchos productos
+    @OneToMany (mappedBy = "detalleCompra")
+    private List<Producto> productos;
+
+
+    //duda
+    //una detalle_compra tiene muchos productos
+    @OneToMany (mappedBy = "detalleCompra")
+    private List<Compra> compras;
+
+
+
+
 
 }

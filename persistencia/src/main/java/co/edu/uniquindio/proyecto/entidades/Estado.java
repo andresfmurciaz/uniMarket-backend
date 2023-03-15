@@ -20,4 +20,12 @@ public class Estado implements Serializable
     //para dejar el atributo no null y con un tamaño de caracteres
     @Column(nullable = false , length = 100)
     private String nombre;
+
+    @ManyToOne
+    private Producto_Moderador productoModerador;
+
+
+
+
+
 }

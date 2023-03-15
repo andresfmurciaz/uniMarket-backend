@@ -5,6 +5,7 @@ import lombok.*;
 import javax.persistence.*;
 import java.io.Serializable;
 import java.time.LocalDate;
+import java.util.List;
 
 @Entity
 @Getter
@@ -23,7 +24,24 @@ public class Producto_Moderador implements Serializable
     private String motivo;
     //para dejar el atributo no null
     @Column(nullable = false)
-
     private LocalDate fecha;
+
+
+    //un productoModerador tiene muchos productos
+    @OneToMany (mappedBy = "productoModerador")
+    private List<Producto> productos;
+
+
+    //un productoModerador tiene muchos productos
+    @OneToMany (mappedBy = "productoModerador")
+    private List<Moderador> moderadores;
+
+
+    //un productoModerador tiene muchos productos
+    @OneToMany (mappedBy = "productoModerador")
+    private List<Estado> estados;
+
+
+
 
 }

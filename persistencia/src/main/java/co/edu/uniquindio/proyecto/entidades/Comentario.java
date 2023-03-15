@@ -5,6 +5,7 @@ import lombok.*;
 import javax.persistence.*;
 import java.io.Serializable;
 import java.time.LocalDate;
+import java.util.List;
 
 @Entity
 @Getter
@@ -24,4 +25,17 @@ public class Comentario implements Serializable
     //FECHA NO NULL Y QUE SE AUTO CREADA
     @Column(nullable = false, columnDefinition = "TIMESTAMP DEFAULT CURRENT_TIMESTAMP")
     private LocalDate fecha_creacion;
+
+//DUDA
+    //una coemntario tiene muchos productos
+    @OneToMany (mappedBy = "comentario")
+    private List<Producto> productos;
+
+
+    //una coemntario tiene
+    @OneToMany (mappedBy = "comentario")
+    private List<Usuario> Usuarios;
+
+
+
 }

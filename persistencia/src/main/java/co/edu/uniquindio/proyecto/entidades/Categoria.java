@@ -1,8 +1,9 @@
 package co.edu.uniquindio.proyecto.entidades;
 import lombok.*;
-
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.List;
+
 @Entity
 @Getter
 @Setter
@@ -19,6 +20,8 @@ public class Categoria implements Serializable
     @Column(nullable = false , length = 100)
     private String nombre;
 
-
+    //una categoria tiene muchos productos
+    @OneToMany (mappedBy = "categoria")
+    private List<Producto> productos;
 
 }
