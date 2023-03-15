@@ -2,10 +2,7 @@ package co.edu.uniquindio.proyecto.entidades;
 
 import lombok.*;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.io.Serializable;
 
 @Entity
@@ -20,8 +17,6 @@ public class Usuario  extends Persona implements Serializable
         //autoinclementable
         @GeneratedValue(strategy = GenerationType.IDENTITY)
         private Integer codigo;
-        private String nombre;
-        private String email;
-        private String password;
+
 
 }

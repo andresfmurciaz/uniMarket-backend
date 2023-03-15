@@ -2,10 +2,8 @@ package co.edu.uniquindio.proyecto.entidades;
 
 import lombok.*;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
+import javax.validation.constraints.Positive;
 import java.io.Serializable;
 
 @Entity
@@ -20,7 +18,12 @@ public class Detalle_Compra implements Serializable
     //autoinclementable
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer codigo;
+    //para dejar el atributo no null
+    @Column(nullable = false)
     private float precio_producto;
+    @Positive
+    //para dejar el atributo no null
+    @Column(nullable = false)
     private Integer unidades;
 
 }

@@ -19,10 +19,12 @@ public class Compra implements Serializable
     //autoinclementable
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer codigo;
-
-
+    //FECHA NO NULL Y QUE SE AUTO CREADA
+    @Column(nullable = false, columnDefinition = "TIMESTAMP DEFAULT CURRENT_TIMESTAMP")
     private LocalDateTime fecha_creacion;
     private float valor_total;
+    //para dejar el atributo no null y con un tamaño de caracteres
+    @Column(nullable = false , length = 100)
     private String medio_pago;
 
 

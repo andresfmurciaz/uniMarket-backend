@@ -18,7 +18,11 @@ public class Producto_Moderador implements Serializable
     //autoinclementable
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer codigo;
+    //para dejar el atributo no null y con un tamaño de caracteres
+    @Column(nullable = false , length = 1000)
     private String motivo;
+    //para dejar el atributo no null
+    @Column(nullable = false)
 
     private LocalDate fecha;
 
