@@ -20,8 +20,10 @@ public class Imagen implements Serializable
     private Integer id_imagen;
 
     //una imagen tiene muchos productos
-    @OneToMany (mappedBy = "imagen")
-    private List<Producto> productos;
+  //  @OneToMany (mappedBy = "imagen")
+   // private List<Producto> productos;
+    @ManyToOne
+    private Producto producto;
 
 
 }

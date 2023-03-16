@@ -21,7 +21,9 @@ public class Categoria implements Serializable
     private String nombre;
 
     //una categoria tiene muchos productos
-    @OneToMany (mappedBy = "categoria")
-    private List<Producto> productos;
+ //   @OneToMany (mappedBy = "categoria")
+  //  private List<Producto> productos;
+    @ManyToOne
+    private Producto producto;
 
 }

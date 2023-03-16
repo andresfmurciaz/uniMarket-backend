@@ -11,6 +11,7 @@ import java.util.List;
 @EqualsAndHashCode
 @NoArgsConstructor
 @ToString
+@Table
 public class Producto implements Serializable
 {
     @Id
@@ -36,35 +37,50 @@ public class Producto implements Serializable
     private LocalDate fecha_limite;
 
     //un producto solo tiene una categoria
-    @ManyToOne
-    private Categoria categoria;
+  //  @ManyToOne
+   // private Categoria categoria;
+    @OneToMany (mappedBy = "producto")
+    private List<Categoria> categorias;
+
     //un producto solo tiene un imagen
-    @ManyToOne
-    private Imagen imagen;
+  //  @ManyToOne
+    //private Imagen imagen;
+    @OneToMany (mappedBy = "producto")
+    private List<Imagen> imagenes;
+
 
     //un producto solo tiene un detalle_compra
-    @ManyToOne
-    private Detalle_Compra detalleCompra;
-
+    //@ManyToOne
+    @OneToMany(mappedBy = "producto")
+    @ToString.Exclude
+    private List<Detalle_Compra> detalleCompras;
     //un producto solo tiene un comentario
-    @ManyToOne
-    private Comentario comentario;
+    //@ManyToOne
+   // private Comentario comentario;
 
 
     //un producto solo tiene un moderador
-    @ManyToOne
-    private Producto_Moderador productoModerador;
+   // @ManyToOne
+   // private Producto_Moderador productoModerador;
+
+    @OneToMany (mappedBy = "producto")
+    private List<Producto_Moderador> productoModerador;
+
+    @OneToMany (mappedBy = "producto")
+    private List<Comentario> comentarios;
+
 
 
     //una usuario tiene muchos productos
-    @OneToMany (mappedBy = "producto")
-    private List<Usuario> usuario;
-
-
+    //@OneToMany (mappedBy = "producto")
+    //private List<Usuario> usuario;
 
 
     @ManyToMany (mappedBy = "productos")
     private List<Usuario> usuarios;
+
+    @ManyToOne
+    private Usuario usuario;
 
 
 

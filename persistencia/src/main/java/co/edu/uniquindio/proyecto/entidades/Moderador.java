@@ -4,6 +4,7 @@ import lombok.*;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.List;
 
 @Entity
 @Getter
@@ -11,16 +12,18 @@ import java.io.Serializable;
 @EqualsAndHashCode
 @NoArgsConstructor
 @ToString
-public class Moderador extends Persona implements Serializable
-{
+public class Moderador extends Persona implements Serializable {
     @Id
     //autoinclementable
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer codigo;
 
 
-    @ManyToOne
-    private Producto_Moderador productoModerador;
+  //  @ManyToOne
+   // private Producto_Moderador productoModerador;
+
+    @OneToMany (mappedBy = "moderador")
+    private List<Producto_Moderador> productoModerador;
 
 
 

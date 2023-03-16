@@ -27,17 +27,21 @@ public class Detalle_Compra implements Serializable
     @Column(nullable = false)
     private Integer unidades;
 
-
-
     //una detalle_compra tiene muchos productos
-    @OneToMany (mappedBy = "detalleCompra")
-    private List<Producto> productos;
+  //  @OneToMany (mappedBy = "detalleCompra")
+   // private List<Producto> productos;
+    @ManyToOne
+    private Producto producto;
 
+    @ManyToOne
+    private Compra compra;
 
     //duda
     //una detalle_compra tiene muchos productos
-    @OneToMany (mappedBy = "detalleCompra")
-    private List<Compra> compras;
+  //  @OneToMany (mappedBy = "detalleCompra")
+  //  @ManyToOne
+   // private List<Compra> compras;
+   // private Compra compra;
 
 
 

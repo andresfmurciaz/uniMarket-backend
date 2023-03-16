@@ -21,17 +21,24 @@ public class Usuario  extends Persona implements Serializable
 
 
         //un USUARIO solo tiene un PRODUCTO
-        @ManyToOne
-        private Producto producto;
+   //     @ManyToOne
+    //    private Producto producto;
 
 
-        @ManyToOne
-        private Compra compra;
+      //  @ManyToOne
+       // private Compra compra;
 
-        @ManyToOne
-        private Comentario comentario;
+        //@ManyToOne
+        //private Comentario comentario;
 
+        @OneToMany (mappedBy = "usuario")
+        private List<Comentario> comentarios;
 
+        @OneToMany (mappedBy = "usuario")
+        private List<Producto> productosUser;
+
+        @OneToMany (mappedBy = "usuario")
+        private List<Compra> compras;
 
         @ManyToMany (mappedBy = "usuarios")
         private List<Producto> productos;
