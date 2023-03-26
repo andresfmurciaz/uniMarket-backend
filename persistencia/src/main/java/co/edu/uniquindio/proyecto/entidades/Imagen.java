@@ -19,11 +19,8 @@ public class Imagen implements Serializable
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id_imagen;
 
-    //una imagen tiene muchos productos
-  //  @OneToMany (mappedBy = "imagen")
-   // private List<Producto> productos;
+//-------------Relaciones------------------------------
     @ManyToOne
     private Producto producto;
-
 
 }

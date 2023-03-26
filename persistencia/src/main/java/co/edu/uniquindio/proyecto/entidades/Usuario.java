@@ -9,39 +9,28 @@ import java.util.List;
 @Entity
 @Getter
 @Setter
-@EqualsAndHashCode
 @NoArgsConstructor
 @ToString
 public class Usuario  extends Persona implements Serializable
 {
-        @Id
-        //autoinclementable
-        @GeneratedValue(strategy = GenerationType.IDENTITY)
-        private Integer codigo;
+        @Column(nullable = false , length = 200)
+        private String direccion;
+        @Column(nullable = false , length = 10)
+        private String telefono;
+
+//-------------Relaciones------------------------------
+
+        @ManyToMany
+        private List<Producto> productos;
 
 
-        //un USUARIO solo tiene un PRODUCTO
-   //     @ManyToOne
-    //    private Producto producto;
+        @OneToMany(mappedBy = "usuario")
+        private List<Producto> productos2;
 
 
-      //  @ManyToOne
-       // private Compra compra;
-
-        //@ManyToOne
-        //private Comentario comentario;
-
-        @OneToMany (mappedBy = "usuario")
+        @OneToMany(mappedBy = "usuario")
         private List<Comentario> comentarios;
 
-        @OneToMany (mappedBy = "usuario")
-        private List<Producto> productosUser;
-
-        @OneToMany (mappedBy = "usuario")
-        private List<Compra> compras;
-
-        @ManyToMany (mappedBy = "usuarios")
-        private List<Producto> productos;
 
 
 }

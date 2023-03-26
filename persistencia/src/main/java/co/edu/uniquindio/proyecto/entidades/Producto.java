@@ -36,48 +36,29 @@ public class Producto implements Serializable
     @Column(nullable = false)
     private LocalDate fecha_limite;
 
-    //un producto solo tiene una categoria
-  //  @ManyToOne
-   // private Categoria categoria;
-    @OneToMany (mappedBy = "producto")
-    private List<Categoria> categorias;
-
-    //un producto solo tiene un imagen
-  //  @ManyToOne
-    //private Imagen imagen;
-    @OneToMany (mappedBy = "producto")
+//-------------Relaciones------------------------------
+    @OneToMany(mappedBy = "producto")
     private List<Imagen> imagenes;
 
 
-    //un producto solo tiene un detalle_compra
-    //@ManyToOne
     @OneToMany(mappedBy = "producto")
-    @ToString.Exclude
-    private List<Detalle_Compra> detalleCompras;
-    //un producto solo tiene un comentario
-    //@ManyToOne
-   // private Comentario comentario;
+    private List<Categoria> categorias;
 
 
-    //un producto solo tiene un moderador
-   // @ManyToOne
-   // private Producto_Moderador productoModerador;
+    @OneToMany(mappedBy = "producto")
+    private List<Detalle_Compra> detalle_compras;
 
-    @OneToMany (mappedBy = "producto")
-    private List<Producto_Moderador> productoModerador;
 
-    @OneToMany (mappedBy = "producto")
+    @OneToMany(mappedBy = "producto")
     private List<Comentario> comentarios;
 
+    @OneToMany(mappedBy = "producto")
+    private List<Producto_Moderador> producto_moderadores;
 
 
-    //una usuario tiene muchos productos
-    //@OneToMany (mappedBy = "producto")
-    //private List<Usuario> usuario;
-
-
-    @ManyToMany (mappedBy = "productos")
+    @ManyToMany(mappedBy = "productos")
     private List<Usuario> usuarios;
+
 
     @ManyToOne
     private Usuario usuario;

@@ -22,11 +22,11 @@ public class Estado implements Serializable
     @Column(nullable = false , length = 100)
     private String nombre;
 
-  //  @ManyToOne
-   // private Producto_Moderador productoModerador;
+//-------------Relaciones------------------------------
 
-    @OneToMany (mappedBy = "estado")
-    private List<Producto_Moderador> productoModerador;
+    @OneToMany(mappedBy ="estado")
+    private List<Producto_Moderador>producto_moderadors;
+
 
 
 

@@ -20,10 +20,10 @@ public class Categoria implements Serializable
     @Column(nullable = false , length = 100)
     private String nombre;
 
-    //una categoria tiene muchos productos
- //   @OneToMany (mappedBy = "categoria")
-  //  private List<Producto> productos;
+//-------------Relaciones------------------------------
+
     @ManyToOne
     private Producto producto;
+
 
 }

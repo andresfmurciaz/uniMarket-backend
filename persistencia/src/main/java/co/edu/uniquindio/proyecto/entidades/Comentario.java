@@ -26,20 +26,11 @@ public class Comentario implements Serializable
     @Column(nullable = false, columnDefinition = "TIMESTAMP DEFAULT CURRENT_TIMESTAMP")
     private LocalDate fecha_creacion;
 
-//DUDA
-    //una coemntario tiene muchos productos
- //   @OneToMany (mappedBy = "comentario")
-   // private List<Producto> productos;
-
-
-    //una coemntario tiene
-    //@OneToMany (mappedBy = "comentario")
-    //private List<Usuario> Usuarios;
-    @ManyToOne
-    private Usuario usuario;
+    //-------------Relaciones------------------------------
     @ManyToOne
     private Producto producto;
 
-
+    @ManyToOne
+    private Usuario usuario;
 
 }

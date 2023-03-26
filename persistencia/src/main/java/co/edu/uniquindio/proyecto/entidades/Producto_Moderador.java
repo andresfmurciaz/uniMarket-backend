@@ -26,30 +26,16 @@ public class Producto_Moderador implements Serializable
     @Column(nullable = false)
     private LocalDate fecha;
 
-
-    //un productoModerador tiene muchos productos
-   // @OneToMany (mappedBy = "productoModerador")
-    //private List<Producto> productos;
+//-------------Relaciones------------------------------
 
     @ManyToOne
     private Producto producto;
 
-    @ManyToOne
-    private Moderador moderador;
-
-    //un productoModerador tiene muchos productos
-  //  @OneToMany (mappedBy = "productoModerador")
-   // private List<Moderador> moderadores;
-
-
-    //un productoModerador tiene muchos productos
-  //  @OneToMany (mappedBy = "productoModerador")
-   // private List<Estado> estados;
 
     @ManyToOne
     private Estado estado;
-
-
+    @ManyToOne
+    private Moderador moderador;
 
 
 }

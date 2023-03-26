@@ -9,22 +9,15 @@ import java.util.List;
 @Entity
 @Getter
 @Setter
-@EqualsAndHashCode
 @NoArgsConstructor
 @ToString
 public class Moderador extends Persona implements Serializable {
-    @Id
-    //autoinclementable
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer codigo;
 
 
-  //  @ManyToOne
-   // private Producto_Moderador productoModerador;
-
-    @OneToMany (mappedBy = "moderador")
-    private List<Producto_Moderador> productoModerador;
+//-------------Relaciones------------------------------
 
 
+    @OneToMany(mappedBy = "moderador")
+    private List<Producto_Moderador>producto_moderadors;
 
 }

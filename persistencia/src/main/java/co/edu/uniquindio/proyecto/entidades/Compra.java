@@ -29,24 +29,11 @@ public class Compra implements Serializable
     private String medio_pago;
 
 
-    //duda
-    //una compra solo tiene un detalle
-    /*
-    @ManyToOne
-    private Detalle_Compra detalleCompra;
-*/
+//-------------Relaciones------------------------------
+
 
     @OneToMany(mappedBy = "compra")
-    @ToString.Exclude
-    // private Detalle_Compra detalleCompra;
-    private List<Detalle_Compra> detalleCompras;
-
-    //una
-    //@OneToMany (mappedBy = "compra")
-    //private List<Usuario> usuarios;
-
-    @ManyToOne
-    private Usuario usuario;
+    private List<Detalle_Compra>detalle_compras;
 
 
 
