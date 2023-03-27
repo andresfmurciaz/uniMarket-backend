@@ -8,6 +8,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabase;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 
+import java.util.List;
+
 @DataJpaTest
 @AutoConfigureTestDatabase(replace = AutoConfigureTestDatabase.Replace.NONE)
 public class UsuarioTest {
@@ -73,6 +75,28 @@ public class UsuarioTest {
        Usuario usuarioBuscado= usuarioRepo.findById(1).orElse(null);
        //compara si se realizo el cambio
        Assertions.assertEquals("andres@gmail.com",usuarioBuscado.getEmail());
+    }
+
+    @Test
+    public void listarTest()
+    {
+        Usuario usuario = new Usuario();
+        usuario.setNombre("andres");
+        usuario.setDireccion("chilacoa");
+        usuario.setCodigo(1);
+        usuario.setEmail("andresf@gmail.com");
+        usuario.setPassword("123");
+        usuario.setTelefono("3168836252");
+        //creo un usuario para guardar lo que me devuelve el repo . save
+        Usuario usuario1 = usuarioRepo.save(usuario);
+
+        //lista por medio de la clase del repo a todo lo que tenga en la base de datos
+        List<Usuario> usuarios = usuarioRepo.findAll();
+
+        System.out.println(usuarios);
+
+
+
     }
 
 
