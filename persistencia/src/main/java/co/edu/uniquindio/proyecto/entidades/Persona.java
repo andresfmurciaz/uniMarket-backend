@@ -15,7 +15,8 @@ import java.io.Serializable;
 @MappedSuperclass
 public class Persona implements Serializable {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @EqualsAndHashCode.Include
+   // @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer codigo;
     //para dejar el atributo no null y con un tamaño de caracteres
     @Column(nullable = false , length = 100)

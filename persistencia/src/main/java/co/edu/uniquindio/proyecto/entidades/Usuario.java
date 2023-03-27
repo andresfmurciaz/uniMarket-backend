@@ -9,9 +9,10 @@ import java.util.List;
 @Entity
 @Getter
 @Setter
+
 @NoArgsConstructor
 @ToString
-public class Usuario  extends Persona implements Serializable
+public class Usuario extends Persona implements Serializable
 {
         @Column(nullable = false , length = 200)
         private String direccion;
