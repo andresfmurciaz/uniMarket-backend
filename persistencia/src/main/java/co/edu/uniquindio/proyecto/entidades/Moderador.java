@@ -20,4 +20,7 @@ public class Moderador extends Persona implements Serializable {
     @OneToMany(mappedBy = "moderador")
     private List<Producto_Moderador>producto_moderadors;
 
+
+
+
 }
