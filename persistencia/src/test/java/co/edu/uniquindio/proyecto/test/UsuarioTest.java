@@ -11,6 +11,7 @@ import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 import java.util.List;
 
 @DataJpaTest
+//se usa para que se conecto conla configuraciond de la BD
 @AutoConfigureTestDatabase(replace = AutoConfigureTestDatabase.Replace.NONE)
 public class UsuarioTest {
 
