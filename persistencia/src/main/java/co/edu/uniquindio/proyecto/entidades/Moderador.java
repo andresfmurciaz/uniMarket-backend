@@ -12,7 +12,10 @@ import java.util.List;
 @NoArgsConstructor
 @ToString
 public class Moderador extends Persona implements Serializable {
-
+    public Moderador(Integer codigo, String nombre, String email, String password ) {
+        super(codigo, nombre, email, password);
+        this.producto_moderadors = producto_moderadors;
+    }
 
 //-------------Relaciones------------------------------
 

@@ -9,10 +9,14 @@
  insert into usuario values(9,"Raquel","Raquel@gmail.com","123","chilacoa 20","3223477434");
  insert into usuario values(10,"Mario","mario@gmail.com","123","chilacoa 21","4224977434");
 
+
+
+ insert into moderador values(1,"Luis","luis@gmail.com","123");
+ insert into moderador values(2,"Raquel","Raquel@gmail.com","123");
+ insert into moderador values(3,"Mario","mario@gmail.com","123");
+
 /*
- insert into moderador values(1,"Luis","luis@gmail.com","123",1);
- insert into moderador values(2,"Raquel","Raquel@gmail.com","123",2);
- insert into moderador values(3,"Mario","mario@gmail.com","123",3);
+
 
 
 insert into producto values (1,"carro juguete",3,"jueguete de madera con 4 ruedas",20000,TRUE,"2000/10/09","2000/11/09",1);

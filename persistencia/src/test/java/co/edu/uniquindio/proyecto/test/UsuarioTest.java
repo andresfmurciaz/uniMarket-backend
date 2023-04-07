@@ -65,7 +65,7 @@ public class UsuarioTest {
         List<Usuario> usuarios = usuarioRepo.findAll();
 
         System.out.println(usuarios);
-        
+
     }
 
 
