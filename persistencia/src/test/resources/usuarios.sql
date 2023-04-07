@@ -27,8 +27,13 @@ insert into producto_moderador values (1,"mirar si esta bien","2000/10/09",1,1,1
 insert into estado values(1,"activo");
 insert into stado values (2,"inactivo");
 
+insert into detalle_compra values(1,1,20000,1,1);
 
+insert into compra values(1,"2000/10/09",30000,"efectivo",1);
 
+insert into categoria values ();
+
+insert into imagen values();
 
 
 
