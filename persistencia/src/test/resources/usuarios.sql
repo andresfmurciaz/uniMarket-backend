@@ -1,0 +1,14 @@
+ insert into usuario values(1,"Andres Felipe","andres@gmail.com","123","chilacoa 12","3224977434");
+ insert into usuario values(1,"Andres Felipe","andres@gmail.com","123","chilacoa 12","3224977434");
+ insert into usuario values(1,"Andres Felipe","andres@gmail.com","123","chilacoa 12","3224977434");
+ insert into usuario values(1,"Andres Felipe","andres@gmail.com","123","chilacoa 12","3224977434");
+ insert into usuario values(1,"Andres Felipe","andres@gmail.com","123","chilacoa 12","3224977434");
+ insert into usuario values(1,"Andres Felipe","andres@gmail.com","123","chilacoa 12","3224977434");
+ insert into usuario values(1,"Andres Felipe","andres@gmail.com","123","chilacoa 12","3224977434");
+ insert into usuario values(1,"Andres Felipe","andres@gmail.com","123","chilacoa 12","3224977434");
+ insert into usuario values(1,"Andres Felipe","andres@gmail.com","123","chilacoa 12","3224977434");
+ insert into usuario values(1,"Andres Felipe","andres@gmail.com","123","chilacoa 12","3224977434");
+ insert into usuario values(1,"Andres Felipe","andres@gmail.com","123","chilacoa 12","3224977434");
+ insert into usuario values(1,"Andres Felipe","andres@gmail.com","123","chilacoa 12","3224977434");
+ insert into usuario values(1,"Andres Felipe","andres@gmail.com","123","chilacoa 12","3224977434");
+ insert into usuario values(1,"Andres Felipe","andres@gmail.com","123","chilacoa 12","3224977434");
