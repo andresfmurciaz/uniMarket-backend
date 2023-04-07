@@ -15,7 +15,21 @@
  insert into moderador values(3,"Mario","mario@gmail.com","123",3);
 
 
-insert produc
+insert into producto values (1,"carro juguete",3,"jueguete de madera con 4 ruedas",20000,TRUE,"2000/10/09","2000/11/09",1);
+
+
+insert into favorito values (1,1);
+
+insert into comentario values (1,"hola este producto es muy bueno","2000/10/09",1,1);
+
+insert into producto_moderador values (1,"mirar si esta bien","2000/10/09",1,1,1);
+
+insert into estado values(1,"activo");
+insert into stado values (2,"inactivo");
+
+
+
+
 
 
 
