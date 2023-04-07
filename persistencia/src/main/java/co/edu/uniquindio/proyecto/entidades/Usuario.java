@@ -6,6 +6,7 @@ import javax.persistence.*;
 import java.io.Serializable;
 import java.util.List;
 
+
 @Entity
 @Getter
 @Setter
@@ -18,6 +19,14 @@ public class Usuario extends Persona implements Serializable
         private String direccion;
         @Column(nullable = false , length = 10)
         private String telefono;
+
+        public Usuario(String direccion, String telefono) {
+                this.direccion = direccion;
+                this.telefono = telefono;
+        }
+
+        
+
 
 //-------------Relaciones------------------------------
 
