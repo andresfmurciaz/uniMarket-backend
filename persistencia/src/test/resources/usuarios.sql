@@ -9,7 +9,7 @@
  insert into usuario values(9,"Raquel","Raquel@gmail.com","123","chilacoa 20","3223477434");
  insert into usuario values(10,"Mario","mario@gmail.com","123","chilacoa 21","4224977434");
 
-
+/*
  insert into moderador values(1,"Luis","luis@gmail.com","123",1);
  insert into moderador values(2,"Raquel","Raquel@gmail.com","123",2);
  insert into moderador values(3,"Mario","mario@gmail.com","123",3);
@@ -34,7 +34,6 @@ insert into compra values(1,"2000/10/09",30000,"efectivo",1);
 insert into categoria values (1,"juguetes",1);
 
 insert into imagen values(1,20,"www.hola.png",1);
-
-
+*/
 
 

@@ -7,6 +7,7 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabase;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
+import org.springframework.test.context.jdbc.Sql;
 
 import java.util.List;
 
@@ -20,6 +21,7 @@ public class UsuarioTest {
     private UsuarioRepo usuarioRepo;
     //mirar vien la import
     @Test
+    @Sql("classpath:usuarios.sql")
     public void registrarTest()
     {
         Usuario usuario = new Usuario(1,"andres felipe","andres@gmail.com","1234","chilacoa","3224977434");
@@ -28,23 +30,13 @@ public class UsuarioTest {
     }
 
     @Test
+    @Sql("classpath:usuarios.sql")
     public void EliminarTest()
     {
-        Usuario usuario = new Usuario();
-
-        usuario.setNombre("andres");
-        usuario.setDireccion("chilacoa");
-        usuario.setCodigo(1);
-        usuario.setEmail("andresf@gmail.com");
-        usuario.setPassword("123");
-        usuario.setTelefono("3168836252");
-
-        usuarioRepo.save(usuario);
         usuarioRepo.deleteById(1);
         //buscar el usuario y si no lo encuentra me da null
         Usuario usuarioBuscado = usuarioRepo.findById(1).orElse(null);
         Assertions.assertNull(usuarioBuscado);
-
     }
 
 
