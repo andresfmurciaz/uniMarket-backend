@@ -10,5 +10,12 @@
  insert into usuario values(10,"Mario","mario@gmail.com","123","chilacoa 21","4224977434");
 
 
+ insert into moderador values(1,"Luis","luis@gmail.com","123",1);
+ insert into moderador values(2,"Raquel","Raquel@gmail.com","123",2);
+ insert into moderador values(3,"Mario","mario@gmail.com","123",3);
+
+
+insert produc
+
 
 
