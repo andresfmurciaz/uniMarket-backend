@@ -1,5 +1,4 @@
 package co.edu.uniquindio.proyecto.test;
-
 import co.edu.uniquindio.proyecto.entidades.Usuario;
 import co.edu.uniquindio.proyecto.repositorios.UsuarioRepo;
 import org.junit.jupiter.api.Assertions;
@@ -8,7 +7,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabase;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 import org.springframework.test.context.jdbc.Sql;
-
 import java.util.List;
 
 @DataJpaTest
@@ -20,8 +18,10 @@ public class UsuarioTest {
     @Autowired
     private UsuarioRepo usuarioRepo;
     //mirar vien la import
+
+
+
     @Test
-    @Sql("classpath:usuarios.sql")
     public void registrarTest()
     {
         Usuario usuario = new Usuario(1,"andres felipe","andres@gmail.com","1234","chilacoa","3224977434");
@@ -41,17 +41,11 @@ public class UsuarioTest {
 
 
     @Test
+    @Sql("classpath:usuarios.sql")
     public void ActualizarTest()
     {
-        Usuario usuario = new Usuario();
-        usuario.setNombre("andres");
-        usuario.setDireccion("chilacoa");
-        usuario.setCodigo(1);
-        usuario.setEmail("andresf@gmail.com");
-        usuario.setPassword("123");
-        usuario.setTelefono("3168836252");
-        //creo un usuario para guardar lo que me devuelve el repo . save
-       Usuario usuario1 = usuarioRepo.save(usuario);
+        //se busca el usuario en el data setb
+       Usuario usuario1 = usuarioRepo.findById(1).orElse(null);
        //le mando el cambio a ese objeto
        usuario1.setEmail("andres@gmail.com");
        //vuelvo y lo guardo en el repositorio lo busca y si encuentra con el mismo id lo reemplaza
@@ -63,25 +57,15 @@ public class UsuarioTest {
     }
 
     @Test
+    @Sql("classpath:usuarios.sql")
     public void listarTest()
     {
-        Usuario usuario = new Usuario();
-        usuario.setNombre("andres");
-        usuario.setDireccion("chilacoa");
-        usuario.setCodigo(1);
-        usuario.setEmail("andresf@gmail.com");
-        usuario.setPassword("123");
-        usuario.setTelefono("3168836252");
-        //creo un usuario para guardar lo que me devuelve el repo . save
-        Usuario usuario1 = usuarioRepo.save(usuario);
 
         //lista por medio de la clase del repo a todo lo que tenga en la base de datos
         List<Usuario> usuarios = usuarioRepo.findAll();
 
         System.out.println(usuarios);
-
-
-
+        
     }
 
 
