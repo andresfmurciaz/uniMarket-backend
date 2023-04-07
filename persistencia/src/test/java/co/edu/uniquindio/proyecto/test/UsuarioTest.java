@@ -22,15 +22,7 @@ public class UsuarioTest {
     @Test
     public void registrarTest()
     {
-        Usuario usuario = new Usuario();
-
-        usuario.setNombre("andres");
-        usuario.setDireccion("chilacoa");
-        usuario.setCodigo(1);
-        usuario.setEmail("andresf@gmail.com");
-        usuario.setPassword("123");
-        usuario.setTelefono("3168836252");
-
+        Usuario usuario = new Usuario(1,"andres felipe","andres@gmail.com","1234","chilacoa","3224977434");
         Usuario usuarioGuardado= usuarioRepo.save(usuario);
         Assertions.assertNotNull(usuarioGuardado);
     }

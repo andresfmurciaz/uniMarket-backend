@@ -25,10 +25,13 @@ public class Usuario extends Persona implements Serializable
                 this.telefono = telefono;
         }
 
-        
+        public Usuario(Integer codigo, String nombre, String email, String password, String direccion, String telefono) {
+                super(codigo, nombre, email, password);
+                this.direccion = direccion;
+                this.telefono = telefono;
+        }
 
-
-//-------------Relaciones------------------------------
+        //-------------Relaciones------------------------------
 
         @ManyToMany
         private List<Producto> productos;
