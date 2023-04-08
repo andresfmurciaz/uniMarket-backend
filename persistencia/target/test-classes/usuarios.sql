@@ -17,7 +17,6 @@
  insert into moderador values(3,"Mario","mario@gmail.com","123");
 
 /*-----------PRODUCTO---------------------*/
-
 insert into producto (codigo,nombre,unidades,descripcion,precio,activo,fecha_creado,fecha_limite,usuario_codigo) values (1,"carro juguete",3,"jueguete de madera con 4 ruedas",20000,1,'2023-04-08','2023-05-08',1);
 insert into producto (codigo,nombre,unidades,descripcion,precio,activo,fecha_creado,fecha_limite,usuario_codigo) values (2,"carro juguete",3,"jueguete de madera con 4 ruedas",20000,1,'2023-04-08','2023-05-08',1);
 insert into producto (codigo,nombre,unidades,descripcion,precio,activo,fecha_creado,fecha_limite,usuario_codigo) values (3,"carro juguete",3,"jueguete de madera con 4 ruedas",20000,1,'2023-04-08','2023-05-08',2);
@@ -28,9 +27,13 @@ insert into producto (codigo,nombre,unidades,descripcion,precio,activo,fecha_cre
 insert into producto (codigo,nombre,unidades,descripcion,precio,activo,fecha_creado,fecha_limite,usuario_codigo) values (8,"carro juguete",3,"jueguete de madera con 4 ruedas",20000,1,'2023-04-08','2023-05-08',5);
 insert into producto (codigo,nombre,unidades,descripcion,precio,activo,fecha_creado,fecha_limite,usuario_codigo) values (9,"carro juguete",3,"jueguete de madera con 4 ruedas",20000,1,'2023-04-08','2023-05-08',6);
 
+/*-----------COMPRA---------------------*/
+insert into compra (codigo ,fecha_creacion,valor_total,medio_pago,usuario_codigo)values(1,'2023-04-08 13:30:00',30000,"efectivo",1);
 
 
-
+/*-----------DETALLE-COMPRA---------------------
+insert into detalle_compra values(1,1,20000,1,1);
+*/
 
 
 
@@ -53,9 +56,6 @@ insert into producto_moderador values (1,"mirar si esta bien","2000/10/09",1,1,1
 insert into estado values(1,"activo");
 insert into stado values (2,"inactivo");
 
-insert into detalle_compra values(1,1,20000,1,1);
-
-insert into compra values(1,"2000/10/09",30000,"efectivo",1);
 
 insert into categoria values (1,"juguetes",1);
 

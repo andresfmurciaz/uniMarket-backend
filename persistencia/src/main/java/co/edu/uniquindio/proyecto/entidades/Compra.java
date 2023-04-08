@@ -28,12 +28,22 @@ public class Compra implements Serializable
     @Column(nullable = false , length = 100)
     private String medio_pago;
 
+    public Compra(Integer codigo, LocalDateTime fecha_creacion, float valor_total, String medio_pago) {
+        this.codigo = codigo;
+        this.fecha_creacion = fecha_creacion;
+        this.valor_total = valor_total;
+        this.medio_pago = medio_pago;
+    }
 
-//-------------Relaciones------------------------------
+
+    //-------------Relaciones------------------------------
 
 
     @OneToMany(mappedBy = "compra")
     private List<Detalle_Compra>detalle_compras;
+
+    @ManyToOne
+    private Usuario usuario;
 
 
 
