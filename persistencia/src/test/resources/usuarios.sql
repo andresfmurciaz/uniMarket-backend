@@ -61,19 +61,18 @@ insert into imagen(id_imagen,ruta,producto_codigo)values (3,"rutaimg",1);
 
 /*-----------COMENTARIO---------------------*/
 insert into comentario(codigo,fecha_creacion,mensaje,producto_codigo,usuario_codigo) values (1,'2023-04-08',"hola este producto es muy bueno",1,1);;
+insert into comentario(codigo,fecha_creacion,mensaje,producto_codigo,usuario_codigo) values (2,'2023-04-08',"hola este producto es muy bueno",1,1);;
+insert into comentario(codigo,fecha_creacion,mensaje,producto_codigo,usuario_codigo) values (3,'2023-04-08',"hola este producto es muy bueno",1,1);;
+insert into comentario(codigo,fecha_creacion,mensaje,producto_codigo,usuario_codigo) values (4,'2023-04-08',"hola este producto es muy bueno",1,1);;
 
-/*
-
-insert into favorito values (1,1);
-
-insert into comentario values (1,"hola este producto es muy bueno","2000/10/09",1,1);
-
-insert into producto_moderador values (1,"mirar si esta bien","2000/10/09",1,1,1);
+/*-----------ESTADO---------------------*/
 
 insert into estado values(1,"activo");
-insert into stado values (2,"inactivo");
+insert into estado values (2,"inactivo");
+
+/*-----------PRODUCTO-MODERADOR---------------------*/
+insert into producto_moderador(codigo,fecha,motivo,estado_codigo,moderador_codigo,producto_codigo) values (1,'2023-04-08',"mirar si esta bien",1,1,1);
 
 
-*/
 
 

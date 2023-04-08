@@ -22,7 +22,19 @@ public class Estado implements Serializable
     @Column(nullable = false , length = 100)
     private String nombre;
 
-//-------------Relaciones------------------------------
+    public Estado(Integer codigo, String nombre) {
+        this.codigo = codigo;
+        this.nombre = nombre;
+    }
+
+    @Override
+    public String toString() {
+        return "Estado{" +
+                "codigo=" + codigo +
+                ", nombre='" + nombre + '\'' +
+                '}';
+    }
+    //-------------Relaciones------------------------------
 
     @OneToMany(mappedBy ="estado")
     private List<Producto_Moderador>producto_moderadors;

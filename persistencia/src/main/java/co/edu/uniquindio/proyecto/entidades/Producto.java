@@ -50,7 +50,8 @@ public class Producto implements Serializable
     }
 
     @Override
-    public String toString() {
+    public String toString()
+    {
         return "Producto{" +
                 "codigo=" + codigo +
                 ", nombre='" + nombre + '\'' +

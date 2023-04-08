@@ -10,14 +10,15 @@ import java.util.List;
 @Getter
 @Setter
 @NoArgsConstructor
-@ToString
+
 public class Moderador extends Persona implements Serializable {
     public Moderador(Integer codigo, String nombre, String email, String password ) {
         super(codigo, nombre, email, password);
-        this.producto_moderadors = producto_moderadors;
+
     }
 
-//-------------Relaciones------------------------------
+
+    //-------------Relaciones------------------------------
 
 
     @OneToMany(mappedBy = "moderador")

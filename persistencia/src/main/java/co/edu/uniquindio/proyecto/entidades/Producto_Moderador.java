@@ -26,7 +26,16 @@ public class Producto_Moderador implements Serializable
     @Column(nullable = false)
     private LocalDate fecha;
 
-//-------------Relaciones------------------------------
+    public Producto_Moderador(Integer codigo, String motivo, LocalDate fecha, Producto producto, Estado estado, Moderador moderador) {
+        this.codigo = codigo;
+        this.motivo = motivo;
+        this.fecha = fecha;
+        this.producto = producto;
+        this.estado = estado;
+        this.moderador = moderador;
+    }
+
+    //-------------Relaciones------------------------------
 
     @ManyToOne
     private Producto producto;
@@ -37,5 +46,17 @@ public class Producto_Moderador implements Serializable
     @ManyToOne
     private Moderador moderador;
 
+
+    @Override
+    public String toString() {
+        return "Producto_Moderador{" +
+                "codigo=" + codigo +
+                ", motivo='" + motivo + '\'' +
+                ", fecha=" + fecha +
+                ", producto=" + producto +
+                ", estado=" + estado +
+                ", moderador=" + moderador +
+                '}';
+    }
 
 }

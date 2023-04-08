@@ -7,4 +7,6 @@ import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 //se usa para que se conecto conla configuraciond de la BD
 @AutoConfigureTestDatabase(replace = AutoConfigureTestDatabase.Replace.NONE)
 public class EstadoTest {
+
+
 }

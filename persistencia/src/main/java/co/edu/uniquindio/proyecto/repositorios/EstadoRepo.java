@@ -7,4 +7,8 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface EstadoRepo extends JpaRepository<Estado,Integer> {
+
+
+
+
 }
