@@ -29,12 +29,19 @@ insert into producto (codigo,nombre,unidades,descripcion,precio,activo,fecha_cre
 
 /*-----------COMPRA---------------------*/
 insert into compra (codigo ,fecha_creacion,valor_total,medio_pago,usuario_codigo)values(1,'2023-04-08 13:30:00',30000,"efectivo",1);
+insert into compra (codigo ,fecha_creacion,valor_total,medio_pago,usuario_codigo)values(2,'2023-04-08 13:30:00',30000,"efectivo",2);
+insert into compra (codigo ,fecha_creacion,valor_total,medio_pago,usuario_codigo)values(3,'2023-04-08 13:30:00',30000,"efectivo",3);
+insert into compra (codigo ,fecha_creacion,valor_total,medio_pago,usuario_codigo)values(4,'2023-04-08 13:30:00',30000,"efectivo",4);
+insert into compra (codigo ,fecha_creacion,valor_total,medio_pago,usuario_codigo)values(5,'2023-04-08 13:30:00',30000,"efectivo",5);
+insert into compra (codigo ,fecha_creacion,valor_total,medio_pago,usuario_codigo)values(6,'2023-04-08 13:30:00',30000,"efectivo",6);
+insert into compra (codigo ,fecha_creacion,valor_total,medio_pago,usuario_codigo)values(7,'2023-04-08 13:30:00',30000,"efectivo",7);
+insert into compra (codigo ,fecha_creacion,valor_total,medio_pago,usuario_codigo)values(8,'2023-04-08 13:30:00',30000,"efectivo",8);
 
 
 /*-----------DETALLE-COMPRA---------------------
-insert into detalle_compra values(1,1,20000,1,1);
-*/
+insert into detalle_compra ()values(1,1,20000,1,1);
 
+*/
 
 
 

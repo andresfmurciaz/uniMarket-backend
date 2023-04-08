@@ -27,7 +27,15 @@ public class Detalle_Compra implements Serializable
     @Column(nullable = false)
     private Integer unidades;
 
-//-------------Relaciones------------------------------
+    public Detalle_Compra(Integer codigo, float precio_producto, Integer unidades, Producto producto, Compra compra) {
+        this.codigo = codigo;
+        this.precio_producto = precio_producto;
+        this.unidades = unidades;
+        this.producto = producto;
+        this.compra = compra;
+    }
+
+    //-------------Relaciones------------------------------
 
     @ManyToOne
     private Producto producto;

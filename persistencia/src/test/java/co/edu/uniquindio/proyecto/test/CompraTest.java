@@ -40,22 +40,23 @@ public class CompraTest {
         Compra compraBuscado = compraRepo.findById(1).orElse(null);
         Assertions.assertNull(compraBuscado);
     }
-/*
+
+
 
     @Test
     @Sql("classpath:usuarios.sql")
     public void ActualizarTest()
     {
         //se busca el usuario en el data setb
-        Usuario usuario1 = usuarioRepo.findById(1).orElse(null);
+        Compra compra1 = compraRepo.findById(1).orElse(null);
         //le mando el cambio a ese objeto
-        usuario1.setEmail("andres@gmail.com");
+        compra1.setValor_total(31000);
         //vuelvo y lo guardo en el repositorio lo busca y si encuentra con el mismo id lo reemplaza
-        usuarioRepo.save(usuario1);
+        compraRepo.save(compra1);
         //busca el usuario con el id indicado
-        Usuario usuarioBuscado= usuarioRepo.findById(1).orElse(null);
+        Compra compraBuscado= compraRepo.findById(1).orElse(null);
         //compara si se realizo el cambio
-        Assertions.assertEquals("andres@gmail.com",usuarioBuscado.getEmail());
+        Assertions.assertEquals(31000,compraBuscado.getValor_total());
     }
 
     @Test
@@ -64,13 +65,12 @@ public class CompraTest {
     {
 
         //lista por medio de la clase del repo a todo lo que tenga en la base de datos
-        List<Usuario> usuarios = usuarioRepo.findAll();
-
-        System.out.println(usuarios);
+        List<Compra> compras = compraRepo.findAll();
+        System.out.println(compras);
 
     }
 
 
-*/
+
 
 }
