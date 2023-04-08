@@ -49,6 +49,21 @@ public class Producto implements Serializable
         this.usuario = usuario;
     }
 
+    @Override
+    public String toString() {
+        return "Producto{" +
+                "codigo=" + codigo +
+                ", nombre='" + nombre + '\'' +
+                ", unidades=" + unidades +
+                ", descripcion='" + descripcion + '\'' +
+                ", precio=" + precio +
+                ", activo=" + activo +
+                ", fecha_creado=" + fecha_creado +
+                ", fecha_limite=" + fecha_limite +
+                ", usuario=" + usuario +
+                '}';
+    }
+
     //-------------Relaciones------------------------------
     @OneToMany(mappedBy = "producto")
     private List<Imagen> imagenes;

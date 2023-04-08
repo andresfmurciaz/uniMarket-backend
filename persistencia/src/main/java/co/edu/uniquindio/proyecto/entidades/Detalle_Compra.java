@@ -27,15 +27,18 @@ public class Detalle_Compra implements Serializable
     @Column(nullable = false)
     private Integer unidades;
 
-    public Detalle_Compra(Integer codigo, float precio_producto, Integer unidades, Producto producto, Compra compra) {
-        this.codigo = codigo;
-        this.precio_producto = precio_producto;
-        this.unidades = unidades;
-        this.producto = producto;
-        this.compra = compra;
+    @Override
+    public String toString() {
+        return "Detalle_Compra{" +
+                "codigo=" + codigo +
+                ", precio_producto=" + precio_producto +
+                ", unidades=" + unidades +
+                ", producto=" + producto +
+                ", compra=" + compra +
+                '}';
     }
 
-    //-------------Relaciones------------------------------
+//-------------Relaciones------------------------------
 
     @ManyToOne
     private Producto producto;
@@ -43,6 +46,13 @@ public class Detalle_Compra implements Serializable
     @ManyToOne
     private  Compra compra;
 
+    public Detalle_Compra(Integer codigo, float precio_producto, Integer unidades, Producto producto, Compra compra) {
+        this.codigo = codigo;
+        this.precio_producto = precio_producto;
+        this.unidades = unidades;
+        this.producto = producto;
+        this.compra = compra;
+    }
 
 
 

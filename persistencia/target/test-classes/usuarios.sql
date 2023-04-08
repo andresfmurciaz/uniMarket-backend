@@ -38,10 +38,16 @@ insert into compra (codigo ,fecha_creacion,valor_total,medio_pago,usuario_codigo
 insert into compra (codigo ,fecha_creacion,valor_total,medio_pago,usuario_codigo)values(8,'2023-04-08 13:30:00',30000,"efectivo",8);
 
 
-/*-----------DETALLE-COMPRA---------------------
-insert into detalle_compra ()values(1,1,20000,1,1);
+/*-----------DETALLE-COMPRA---------------------*/
+insert into detalle_compra (codigo,precio_producto,unidades,producto_codigo,compra_codigo)values(1,30000,3,1,1);
+insert into detalle_compra (codigo,precio_producto,unidades,producto_codigo,compra_codigo)values(2,30000,3,2,2);
+insert into detalle_compra (codigo,precio_producto,unidades,producto_codigo,compra_codigo)values(3,30000,3,3,3);
+insert into detalle_compra (codigo,precio_producto,unidades,producto_codigo,compra_codigo)values(4,30000,3,4,4);
+insert into detalle_compra (codigo,precio_producto,unidades,producto_codigo,compra_codigo)values(5,30000,3,5,5);
+insert into detalle_compra (codigo,precio_producto,unidades,producto_codigo,compra_codigo)values(6,30000,3,6,6);
 
-*/
+
+
 
 
 

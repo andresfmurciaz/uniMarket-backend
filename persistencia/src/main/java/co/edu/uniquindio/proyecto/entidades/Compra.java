@@ -35,8 +35,17 @@ public class Compra implements Serializable
         this.medio_pago = medio_pago;
     }
 
-
-    //-------------Relaciones------------------------------
+    @Override
+    public String toString() {
+        return "Compra{" +
+                "codigo=" + codigo +
+                ", fecha_creacion=" + fecha_creacion +
+                ", valor_total=" + valor_total +
+                ", medio_pago='" + medio_pago + '\'' +
+                ", usuario=" + usuario +
+                '}';
+    }
+//-------------Relaciones------------------------------
 
 
     @OneToMany(mappedBy = "compra")
