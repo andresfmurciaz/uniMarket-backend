@@ -22,6 +22,22 @@ public class Categoria implements Serializable
 
 //-------------Relaciones------------------------------
 
+
+    public Categoria(Integer codigo, String nombre, Producto producto) {
+        this.codigo = codigo;
+        this.nombre = nombre;
+        this.producto = producto;
+    }
+
+    @Override
+    public String toString() {
+        return "Categoria{" +
+                "codigo=" + codigo +
+                ", nombre='" + nombre + '\'' +
+                ", producto=" + producto +
+                '}';
+    }
+
     @ManyToOne
     private Producto producto;
 

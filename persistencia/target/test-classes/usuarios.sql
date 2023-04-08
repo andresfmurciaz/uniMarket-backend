@@ -46,8 +46,13 @@ insert into detalle_compra (codigo,precio_producto,unidades,producto_codigo,comp
 insert into detalle_compra (codigo,precio_producto,unidades,producto_codigo,compra_codigo)values(5,30000,3,5,5);
 insert into detalle_compra (codigo,precio_producto,unidades,producto_codigo,compra_codigo)values(6,30000,3,6,6);
 
+/*-----------CATEGORIA---------------------*/
 
-
+insert into categoria(codigo,nombre,producto_codigo)values (1,"juguetes",1);
+insert into categoria(codigo,nombre,producto_codigo)values (2,"hogar",1);
+insert into categoria(codigo,nombre,producto_codigo)values (3,"zapatos",1);
+insert into categoria(codigo,nombre,producto_codigo)values (4,"vehiculos",1);
+insert into categoria(codigo,nombre,producto_codigo)values (5,"ropa",1);
 
 
 
@@ -70,7 +75,6 @@ insert into estado values(1,"activo");
 insert into stado values (2,"inactivo");
 
 
-insert into categoria values (1,"juguetes",1);
 
 insert into imagen values(1,20,"www.hola.png",1);
 */
