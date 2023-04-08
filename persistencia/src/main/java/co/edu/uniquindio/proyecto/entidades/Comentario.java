@@ -26,6 +26,27 @@ public class Comentario implements Serializable
     @Column(nullable = false, columnDefinition = "TIMESTAMP DEFAULT CURRENT_TIMESTAMP")
     private LocalDate fecha_creacion;
 
+
+    public Comentario(Integer codigo, String mensaje, LocalDate fecha_creacion, Producto producto, Usuario usuario) {
+        this.codigo = codigo;
+        this.mensaje = mensaje;
+        this.fecha_creacion = fecha_creacion;
+        this.producto = producto;
+        this.usuario = usuario;
+    }
+
+    @Override
+    public String toString()
+    {
+        return "Comentario{" +
+                "codigo=" + codigo +
+                ", mensaje='" + mensaje + '\'' +
+                ", fecha_creacion=" + fecha_creacion +
+                ", producto=" + producto +
+                ", usuario=" + usuario +
+                '}';
+    }
+
     //-------------Relaciones------------------------------
     @ManyToOne
     private Producto producto;

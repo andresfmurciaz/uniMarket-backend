@@ -54,16 +54,15 @@ insert into categoria(codigo,nombre,producto_codigo)values (3,"zapatos",1);
 insert into categoria(codigo,nombre,producto_codigo)values (4,"vehiculos",1);
 insert into categoria(codigo,nombre,producto_codigo)values (5,"ropa",1);
 
+/*-----------IMAGEN---------------------*/
+insert into imagen(id_imagen,ruta,producto_codigo)values (1,"rutaimg",1);
+insert into imagen(id_imagen,ruta,producto_codigo)values (2,"rutaimg",1);
+insert into imagen(id_imagen,ruta,producto_codigo)values (3,"rutaimg",1);
 
-
-
-
+/*-----------COMENTARIO---------------------*/
+insert into comentario(codigo,fecha_creacion,mensaje,producto_codigo,usuario_codigo) values (1,'2023-04-08',"hola este producto es muy bueno",1,1);;
 
 /*
-
-
-
-
 
 insert into favorito values (1,1);
 
@@ -75,8 +74,6 @@ insert into estado values(1,"activo");
 insert into stado values (2,"inactivo");
 
 
-
-insert into imagen values(1,20,"www.hola.png",1);
 */
 
 
