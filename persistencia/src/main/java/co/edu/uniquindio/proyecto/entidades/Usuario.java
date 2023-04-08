@@ -31,6 +31,13 @@ public class Usuario extends Persona implements Serializable
                 this.telefono = telefono;
         }
 
+        @Override
+        public String toString() {
+                return "Usuario{" +
+                        "direccion='" + direccion + '\'' +
+                        ", telefono='" + telefono + '\'' +
+                        '}';
+        }
         //-------------Relaciones------------------------------
 
         @ManyToMany

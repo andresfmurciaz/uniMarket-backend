@@ -27,8 +27,8 @@ public class Producto implements Serializable
     private String descripcion;
     private float precio;
 
-    @Column(nullable = false)
-    private boolean activo;
+
+    private Integer activo;
 
     @Column(nullable = false)
     private LocalDate fecha_creado;
@@ -36,7 +36,20 @@ public class Producto implements Serializable
     @Column(nullable = false)
     private LocalDate fecha_limite;
 
-//-------------Relaciones------------------------------
+
+    public Producto(Integer codigo, String nombre, Integer unidades, String descripcion, float precio, Integer activo, LocalDate fecha_creado, LocalDate fecha_limite, Usuario usuario) {
+        this.codigo = codigo;
+        this.nombre = nombre;
+        this.unidades = unidades;
+        this.descripcion = descripcion;
+        this.precio = precio;
+        this.activo = activo;
+        this.fecha_creado = fecha_creado;
+        this.fecha_limite = fecha_limite;
+        this.usuario = usuario;
+    }
+
+    //-------------Relaciones------------------------------
     @OneToMany(mappedBy = "producto")
     private List<Imagen> imagenes;
 
