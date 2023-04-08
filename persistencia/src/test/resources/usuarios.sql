@@ -72,6 +72,10 @@ insert into estado values (2,"inactivo");
 
 /*-----------PRODUCTO-MODERADOR---------------------*/
 insert into producto_moderador(codigo,fecha,motivo,estado_codigo,moderador_codigo,producto_codigo) values (1,'2023-04-08',"mirar si esta bien",1,1,1);
+insert into producto_moderador(codigo,fecha,motivo,estado_codigo,moderador_codigo,producto_codigo) values (2,'2023-04-08',"mirar si esta bien",1,1,2);
+insert into producto_moderador(codigo,fecha,motivo,estado_codigo,moderador_codigo,producto_codigo) values (3,'2023-04-08',"mirar si esta bien",1,2,3);
+
+
 
 
 
