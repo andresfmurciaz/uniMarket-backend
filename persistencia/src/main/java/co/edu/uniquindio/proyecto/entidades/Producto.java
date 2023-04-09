@@ -67,21 +67,26 @@ public class Producto implements Serializable
 
     //-------------Relaciones------------------------------
     @OneToMany(mappedBy = "producto")
+    @ToString.Exclude
     private List<Imagen> imagenes;
 
 
     @OneToMany(mappedBy = "producto")
+    @ToString.Exclude
     private List<Categoria> categorias;
 
 
     @OneToMany(mappedBy = "producto")
+    @ToString.Exclude
     private List<Detalle_Compra> detalle_compras;
 
 
     @OneToMany(mappedBy = "producto")
+    @ToString.Exclude
     private List<Comentario> comentarios;
 
     @OneToMany(mappedBy = "producto")
+    @ToString.Exclude
     private List<Producto_Moderador> producto_moderadores;
 
 

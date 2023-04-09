@@ -37,6 +37,7 @@ public class Estado implements Serializable
     //-------------Relaciones------------------------------
 
     @OneToMany(mappedBy ="estado")
+    @ToString.Exclude
     private List<Producto_Moderador>producto_moderadors;
 
 

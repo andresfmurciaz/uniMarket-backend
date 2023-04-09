@@ -49,6 +49,7 @@ public class Compra implements Serializable
 
 
     @OneToMany(mappedBy = "compra")
+    @ToString.Exclude
     private List<Detalle_Compra>detalle_compras;
 
     @ManyToOne

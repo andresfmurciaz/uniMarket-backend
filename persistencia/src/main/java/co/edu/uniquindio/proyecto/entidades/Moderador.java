@@ -22,6 +22,7 @@ public class Moderador extends Persona implements Serializable {
 
 
     @OneToMany(mappedBy = "moderador")
+    @ToString.Exclude
     private List<Producto_Moderador>producto_moderadors;
 
 
