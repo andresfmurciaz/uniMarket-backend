@@ -37,7 +37,7 @@ public class Producto implements Serializable
     private LocalDate fecha_limite;
 
 
-    public Producto(Integer codigo, String nombre, Integer unidades, String descripcion, float precio, Integer activo, LocalDate fecha_creado, LocalDate fecha_limite, Usuario usuario) {
+    public Producto(Integer codigo, String nombre, Integer unidades, String descripcion, float precio, Integer activo, LocalDate fecha_creado, LocalDate fecha_limite, Usuario usuario,Categoria categoria) {
         this.codigo = codigo;
         this.nombre = nombre;
         this.unidades = unidades;
@@ -47,6 +47,7 @@ public class Producto implements Serializable
         this.fecha_creado = fecha_creado;
         this.fecha_limite = fecha_limite;
         this.usuario = usuario;
+        this.categoria=categoria;
     }
 
     @Override
@@ -62,6 +63,8 @@ public class Producto implements Serializable
                 ", fecha_creado=" + fecha_creado +
                 ", fecha_limite=" + fecha_limite +
                 ", usuario=" + usuario +
+                ", Categoria=" + categoria +
+
                 '}';
     }
 
@@ -70,10 +73,6 @@ public class Producto implements Serializable
     @ToString.Exclude
     private List<Imagen> imagenes;
 
-
-    @OneToMany(mappedBy = "producto")
-    @ToString.Exclude
-    private List<Categoria> categorias;
 
 
     @OneToMany(mappedBy = "producto")
@@ -96,6 +95,9 @@ public class Producto implements Serializable
 
     @ManyToOne
     private Usuario usuario;
+
+    @ManyToOne
+    private Categoria categoria;
 
 
 

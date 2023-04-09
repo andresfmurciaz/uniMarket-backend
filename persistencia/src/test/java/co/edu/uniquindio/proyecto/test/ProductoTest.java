@@ -1,8 +1,10 @@
 package co.edu.uniquindio.proyecto.test;
 
 
+import co.edu.uniquindio.proyecto.entidades.Categoria;
 import co.edu.uniquindio.proyecto.entidades.Producto;
 import co.edu.uniquindio.proyecto.entidades.Usuario;
+import co.edu.uniquindio.proyecto.repositorios.CategoriaRepo;
 import co.edu.uniquindio.proyecto.repositorios.ProductoRepo;
 import co.edu.uniquindio.proyecto.repositorios.UsuarioRepo;
 import org.junit.jupiter.api.Assertions;
@@ -30,13 +32,16 @@ public class ProductoTest {
     @Autowired
     private UsuarioRepo usuarioRepo;
 
+    @Autowired
+    private CategoriaRepo categoriaRepo;
 
     @Test
     @Sql("classpath:usuarios.sql")
     public void registrarTest() {
 
+        Categoria categoria1= categoriaRepo.findById(1).orElse(null);
         Usuario usuario1 = usuarioRepo.findById(1).orElse(null);
-        Producto producto = new Producto(8,"celular redmi 8",1,"celular redmi con 30 pixeles y 8 g de ram",660000, 1, LocalDate.of(2023, 4, 7),LocalDate.of(2023, 5, 7),usuario1);
+        Producto producto = new Producto(8,"celular redmi 8",1,"celular redmi con 30 pixeles y 8 g de ram",660000, 1, LocalDate.of(2023, 4, 7),LocalDate.of(2023, 5, 7),usuario1,categoria1);
         Producto productoGuardado= productoRepo.save(producto);
         Assertions.assertNotNull(productoGuardado);
 

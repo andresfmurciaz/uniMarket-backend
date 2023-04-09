@@ -13,46 +13,52 @@
 
 /*-----------MODERADOR---------------------*/
  insert into moderador values(1,"Luis","luis@gmail.com","123");
- insert into moderador values(2,"Raquel","Raquel@gmail.com","123");
- insert into moderador values(3,"Mario","mario@gmail.com","123");
-
-/*-----------PRODUCTO---------------------*/
-insert into producto (codigo,nombre,unidades,descripcion,precio,activo,fecha_creado,fecha_limite,usuario_codigo) values (1,"carro juguete",3,"jueguete de madera con 4 ruedas",20000,1,'2023-04-08','2023-05-08',1);
-insert into producto (codigo,nombre,unidades,descripcion,precio,activo,fecha_creado,fecha_limite,usuario_codigo) values (2,"carro juguete",3,"jueguete de madera con 4 ruedas",20000,1,'2023-04-08','2023-05-08',1);
-insert into producto (codigo,nombre,unidades,descripcion,precio,activo,fecha_creado,fecha_limite,usuario_codigo) values (3,"carro juguete",3,"jueguete de madera con 4 ruedas",20000,1,'2023-04-08','2023-05-08',2);
-insert into producto (codigo,nombre,unidades,descripcion,precio,activo,fecha_creado,fecha_limite,usuario_codigo) values (4,"carro juguete",3,"jueguete de madera con 4 ruedas",20000,1,'2023-04-08','2023-05-08',2);
-insert into producto (codigo,nombre,unidades,descripcion,precio,activo,fecha_creado,fecha_limite,usuario_codigo) values (5,"carro juguete",3,"jueguete de madera con 4 ruedas",20000,1,'2023-04-08','2023-05-08',3);
-insert into producto (codigo,nombre,unidades,descripcion,precio,activo,fecha_creado,fecha_limite,usuario_codigo) values (6,"carro juguete",3,"jueguete de madera con 4 ruedas",20000,1,'2023-04-08','2023-05-08',4);
-insert into producto (codigo,nombre,unidades,descripcion,precio,activo,fecha_creado,fecha_limite,usuario_codigo) values (7,"carro juguete",3,"jueguete de madera con 4 ruedas",20000,1,'2023-04-08','2023-05-08',5);
-insert into producto (codigo,nombre,unidades,descripcion,precio,activo,fecha_creado,fecha_limite,usuario_codigo) values (8,"carro juguete",3,"jueguete de madera con 4 ruedas",20000,1,'2023-04-08','2023-05-08',5);
-insert into producto (codigo,nombre,unidades,descripcion,precio,activo,fecha_creado,fecha_limite,usuario_codigo) values (9,"carro juguete",3,"jueguete de madera con 4 ruedas",20000,1,'2023-04-08','2023-05-08',6);
-
-/*-----------COMPRA---------------------*/
-insert into compra (codigo ,fecha_creacion,valor_total,medio_pago,usuario_codigo)values(1,'2023-04-08 13:30:00',30000,"efectivo",1);
-insert into compra (codigo ,fecha_creacion,valor_total,medio_pago,usuario_codigo)values(2,'2023-04-08 13:30:00',30000,"efectivo",2);
-insert into compra (codigo ,fecha_creacion,valor_total,medio_pago,usuario_codigo)values(3,'2023-04-08 13:30:00',30000,"efectivo",3);
-insert into compra (codigo ,fecha_creacion,valor_total,medio_pago,usuario_codigo)values(4,'2023-04-08 13:30:00',30000,"efectivo",4);
-insert into compra (codigo ,fecha_creacion,valor_total,medio_pago,usuario_codigo)values(5,'2023-04-08 13:30:00',30000,"efectivo",5);
-insert into compra (codigo ,fecha_creacion,valor_total,medio_pago,usuario_codigo)values(6,'2023-04-08 13:30:00',30000,"efectivo",6);
-insert into compra (codigo ,fecha_creacion,valor_total,medio_pago,usuario_codigo)values(7,'2023-04-08 13:30:00',30000,"efectivo",7);
-insert into compra (codigo ,fecha_creacion,valor_total,medio_pago,usuario_codigo)values(8,'2023-04-08 13:30:00',30000,"efectivo",8);
-
-
-/*-----------DETALLE-COMPRA---------------------*/
-insert into detalle_compra (codigo,precio_producto,unidades,producto_codigo,compra_codigo)values(1,30000,3,1,1);
-insert into detalle_compra (codigo,precio_producto,unidades,producto_codigo,compra_codigo)values(2,30000,3,2,2);
-insert into detalle_compra (codigo,precio_producto,unidades,producto_codigo,compra_codigo)values(3,30000,3,3,3);
-insert into detalle_compra (codigo,precio_producto,unidades,producto_codigo,compra_codigo)values(4,30000,3,4,4);
-insert into detalle_compra (codigo,precio_producto,unidades,producto_codigo,compra_codigo)values(5,30000,3,5,5);
-insert into detalle_compra (codigo,precio_producto,unidades,producto_codigo,compra_codigo)values(6,30000,3,6,6);
+ insert into moderador values(2,"Raquel","Raquel@gmail.com","1234");
+ insert into moderador values(3,"Mario","mario@gmail.com","12345");
 
 /*-----------CATEGORIA---------------------*/
 
-insert into categoria(codigo,nombre,producto_codigo)values (1,"juguetes",1);
-insert into categoria(codigo,nombre,producto_codigo)values (2,"hogar",1);
-insert into categoria(codigo,nombre,producto_codigo)values (3,"zapatos",1);
-insert into categoria(codigo,nombre,producto_codigo)values (4,"vehiculos",1);
-insert into categoria(codigo,nombre,producto_codigo)values (5,"ropa",1);
+insert into categoria(codigo,nombre)values (1,"juguetes");
+insert into categoria(codigo,nombre)values (2,"hogar");
+insert into categoria(codigo,nombre)values (3,"zapatos");
+insert into categoria(codigo,nombre)values (4,"vehiculos");
+insert into categoria(codigo,nombre)values (5,"ropa");
+
+/*-----------PRODUCTO---------------------*/
+insert into producto (codigo,nombre,unidades,descripcion,precio,activo,fecha_creado,fecha_limite,usuario_codigo,categoria_codigo) values (1,"carro juguete",5,"jueguete de madera con 4 ruedas",20000,1,'2021-04-08','2024-05-08',1,1);
+insert into producto (codigo,nombre,unidades,descripcion,precio,activo,fecha_creado,fecha_limite,usuario_codigo,categoria_codigo) values (2,"avion de juguete",6,"jueguete de madera con dos alas",10000,1,'2021-04-08','2024-05-08',1,1);
+insert into producto (codigo,nombre,unidades,descripcion,precio,activo,fecha_creado,fecha_limite,usuario_codigo,categoria_codigo) values (3,"lamp luz blanca",10,"lampara de fibra de vidrio de color blanco",50000,1,'2021-04-08','2024-05-08',2,2);
+insert into producto (codigo,nombre,unidades,descripcion,precio,activo,fecha_creado,fecha_limite,usuario_codigo,categoria_codigo) values (4,"biblioteca para libros",3,"biblioteca para 10-20 librose madera",130000,1,'2021-04-08','2024-05-08',2,2);
+insert into producto (codigo,nombre,unidades,descripcion,precio,activo,fecha_creado,fecha_limite,usuario_codigo,categoria_codigo) values (5,"Zapatos adidas hombre",4,"Zapatos adidas para hombre talla 39 color blanco",150000,1,'2021-04-08','2024-05-08',3,3);
+insert into producto (codigo,nombre,unidades,descripcion,precio,activo,fecha_creado,fecha_limite,usuario_codigo,categoria_codigo) values (6,"Zapatos adidad mujer",3,"Zapatos adidas para hombre talla 36 color blanco",130000,1,'2021-04-08','2024-05-08',4,3);
+insert into producto (codigo,nombre,unidades,descripcion,precio,activo,fecha_creado,fecha_limite,usuario_codigo,categoria_codigo) values (7,"forro para carro",5,"forro para carro ancho 1.20 largo 3",180000,1,'2021-04-08','2024-05-08',5,4);
+insert into producto (codigo,nombre,unidades,descripcion,precio,activo,fecha_creado,fecha_limite,usuario_codigo,categoria_codigo) values (8,"Limpiador interno para carros",4,"liquido para limpiar la tapiceria del carro",40000,1,'2021-04-08','2024-05-08',5,4);
+insert into producto (codigo,nombre,unidades,descripcion,precio,activo,fecha_creado,fecha_limite,usuario_codigo,categoria_codigo) values (9,"chaqueta marca nike hombre",1,"chaqueta nike talla L para hombre color negro",230000,1,'2021-04-08','2024-05-08',6,5);
+
+/*-----------COMPRA---------------------*/
+insert into compra (codigo ,fecha_creacion,valor_total,medio_pago,usuario_codigo)values(1,'2023-04-08 13:30:00',40000,"efectivo",7);
+insert into compra (codigo ,fecha_creacion,valor_total,medio_pago,usuario_codigo)values(2,'2023-03-08 13:30:00',30000,"credito",8);
+insert into compra (codigo ,fecha_creacion,valor_total,medio_pago,usuario_codigo)values(3,'2023-03-08 13:30:00',50000,"credito",9);
+insert into compra (codigo ,fecha_creacion,valor_total,medio_pago,usuario_codigo)values(4,'2023-02-08 13:30:00',260000,"sistecredito",10);
+insert into compra (codigo ,fecha_creacion,valor_total,medio_pago,usuario_codigo)values(5,'2023-02-08 13:30:00',150000,"efectivo",7);
+insert into compra (codigo ,fecha_creacion,valor_total,medio_pago,usuario_codigo)values(6,'2023-01-08 13:30:00',130000,"efectivo",7);
+insert into compra (codigo ,fecha_creacion,valor_total,medio_pago,usuario_codigo)values(7,'2023-01-08 13:30:00',120000,"efectivo",10);
+insert into compra (codigo ,fecha_creacion,valor_total,medio_pago,usuario_codigo)values(8,'2022-08-08 13:30:00',230000,"credito",8);
+
+
+/*-----------DETALLE-COMPRA---------------------*/
+insert into detalle_compra (codigo,precio_producto,unidades,producto_codigo,compra_codigo)values(1,20000,2,1,1);
+insert into detalle_compra (codigo,precio_producto,unidades,producto_codigo,compra_codigo)values(2,10000,3,2,2);
+insert into detalle_compra (codigo,precio_producto,unidades,producto_codigo,compra_codigo)values(3,50000,1,3,3);
+insert into detalle_compra (codigo,precio_producto,unidades,producto_codigo,compra_codigo)values(4,130000,2,4,4);
+insert into detalle_compra (codigo,precio_producto,unidades,producto_codigo,compra_codigo)values(5,150000,1,5,5);
+insert into detalle_compra (codigo,precio_producto,unidades,producto_codigo,compra_codigo)values(6,130000,1,6,6);
+insert into detalle_compra (codigo,precio_producto,unidades,producto_codigo,compra_codigo)values(7,40000,3,8,7);
+insert into detalle_compra (codigo,precio_producto,unidades,producto_codigo,compra_codigo)values(8,230000,1,9,8);
+
+
+
+
 
 /*-----------IMAGEN---------------------*/
 insert into imagen(id_imagen,ruta,producto_codigo)values (1,"rutaimg",1);
@@ -72,6 +78,10 @@ insert into estado values (2,"inactivo");
 
 /*-----------PRODUCTO-MODERADOR---------------------*/
 insert into producto_moderador(codigo,fecha,motivo,estado_codigo,moderador_codigo,producto_codigo) values (1,'2023-04-08',"mirar si esta bien",1,1,1);
+insert into producto_moderador(codigo,fecha,motivo,estado_codigo,moderador_codigo,producto_codigo) values (2,'2023-04-08',"mirar si esta bien",1,1,2);
+insert into producto_moderador(codigo,fecha,motivo,estado_codigo,moderador_codigo,producto_codigo) values (3,'2023-04-08',"mirar si esta bien",1,2,3);
+
+
 
 
 

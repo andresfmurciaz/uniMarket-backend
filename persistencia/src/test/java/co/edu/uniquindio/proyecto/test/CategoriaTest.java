@@ -23,8 +23,7 @@ import java.util.List;
 public class CategoriaTest {
 
 
-    @Autowired
-    private ProductoRepo productoRepo;
+
     @Autowired
     private CategoriaRepo categoriaRepo;
 
@@ -32,10 +31,8 @@ public class CategoriaTest {
     @Test
     @Sql("classpath:usuarios.sql")
     public void registrarTest() {
-        //llamo producto y compra del data set para mad¿ndarlo al detalle compra
-        Producto producto1 = productoRepo.findById(1).orElse(null);
 
-       Categoria categoria= new Categoria(1,"juguetes",producto1);
+       Categoria categoria= new Categoria(1,"juguetes");
         Categoria categoriaGuardado= categoriaRepo.save(categoria);
         Assertions.assertNotNull(categoriaGuardado);
     }
