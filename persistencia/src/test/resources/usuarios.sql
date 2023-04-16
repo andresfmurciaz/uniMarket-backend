@@ -36,25 +36,46 @@ insert into producto (codigo,nombre,unidades,descripcion,precio,activo,fecha_cre
 insert into producto (codigo,nombre,unidades,descripcion,precio,activo,fecha_creado,fecha_limite,usuario_codigo,categoria_codigo) values (9,"chaqueta marca nike hombre",1,"chaqueta nike talla L para hombre color negro",230000,1,'2021-04-08','2024-05-08',6,5);
 
 /*-----------COMPRA---------------------*/
-insert into compra (codigo ,fecha_creacion,valor_total,medio_pago,usuario_codigo)values(1,'2023-04-08 13:30:00',40000,"efectivo",7);
+/* -1- el usuario 7 compro 3 productos diferentes con un valor total de $120.000 y los pago en efectivo*/
+insert into compra (codigo ,fecha_creacion,valor_total,medio_pago,usuario_codigo)values(1,'2023-04-08 13:30:00',120000,"efectivo",7);
+
+/* -2- el usuario 8 compro 1 producto  con un valor total de $30.000 y los pago a credito*/
 insert into compra (codigo ,fecha_creacion,valor_total,medio_pago,usuario_codigo)values(2,'2023-03-08 13:30:00',30000,"credito",8);
-insert into compra (codigo ,fecha_creacion,valor_total,medio_pago,usuario_codigo)values(3,'2023-03-08 13:30:00',50000,"credito",9);
-insert into compra (codigo ,fecha_creacion,valor_total,medio_pago,usuario_codigo)values(4,'2023-02-08 13:30:00',260000,"sistecredito",10);
+
+/* -3- el usuario 9 compro 2 productos  con un valor total de $280.000 y los pago a credito*/
+insert into compra (codigo ,fecha_creacion,valor_total,medio_pago,usuario_codigo)values(3,'2023-03-08 13:30:00',280000,"credito",9);
+
+/* -4- el usuario 10 compro 1 producto  con un valor total de $230.000 y los pago con sistecredito*/
+insert into compra (codigo ,fecha_creacion,valor_total,medio_pago,usuario_codigo)values(4,'2023-02-08 13:30:00',230000,"sistecredito",10);
+
+/* -5- el usuario 7 compro 1 producto con un valor total de $230.000 y los pago en efectivo*/
 insert into compra (codigo ,fecha_creacion,valor_total,medio_pago,usuario_codigo)values(5,'2023-02-08 13:30:00',150000,"efectivo",7);
+
 insert into compra (codigo ,fecha_creacion,valor_total,medio_pago,usuario_codigo)values(6,'2023-01-08 13:30:00',130000,"efectivo",7);
+
 insert into compra (codigo ,fecha_creacion,valor_total,medio_pago,usuario_codigo)values(7,'2023-01-08 13:30:00',120000,"efectivo",10);
+
 insert into compra (codigo ,fecha_creacion,valor_total,medio_pago,usuario_codigo)values(8,'2022-08-08 13:30:00',230000,"credito",8);
 
 
 /*-----------DETALLE-COMPRA---------------------*/
+/* -1- el usuario 7 compro 3 productos diferentes con un valor total de $120.000 y los pago en efectivo*/
 insert into detalle_compra (codigo,precio_producto,unidades,producto_codigo,compra_codigo)values(1,20000,2,1,1);
-insert into detalle_compra (codigo,precio_producto,unidades,producto_codigo,compra_codigo)values(2,10000,3,2,2);
-insert into detalle_compra (codigo,precio_producto,unidades,producto_codigo,compra_codigo)values(3,50000,1,3,3);
-insert into detalle_compra (codigo,precio_producto,unidades,producto_codigo,compra_codigo)values(4,130000,2,4,4);
-insert into detalle_compra (codigo,precio_producto,unidades,producto_codigo,compra_codigo)values(5,150000,1,5,5);
-insert into detalle_compra (codigo,precio_producto,unidades,producto_codigo,compra_codigo)values(6,130000,1,6,6);
-insert into detalle_compra (codigo,precio_producto,unidades,producto_codigo,compra_codigo)values(7,40000,3,8,7);
-insert into detalle_compra (codigo,precio_producto,unidades,producto_codigo,compra_codigo)values(8,230000,1,9,8);
+insert into detalle_compra (codigo,precio_producto,unidades,producto_codigo,compra_codigo)values(2,10000,3,2,1);
+insert into detalle_compra (codigo,precio_producto,unidades,producto_codigo,compra_codigo)values(3,50000,1,3,1);
+
+/* -2- el usuario 8 compro 1 producto  con un valor total de $30.000 y los pago a credito*/
+insert into detalle_compra (codigo,precio_producto,unidades,producto_codigo,compra_codigo)values(4,10000,3,2,2);
+
+/* -3- el usuario 9 compro 2 productos  con un valor total de $280.000 y los pago a credito*/
+insert into detalle_compra (codigo,precio_producto,unidades,producto_codigo,compra_codigo)values(5,150000,1,5,3);
+insert into detalle_compra (codigo,precio_producto,unidades,producto_codigo,compra_codigo)values(6,130000,1,6,3);
+
+/* -4- el usuario 10 compro 1 producto  con un valor total de $230.000 y los pago con sistecredito*/
+insert into detalle_compra (codigo,precio_producto,unidaes,producto_codigo,compra_codigo)values(7,230000,1,9,4);
+
+/* -5- el usuario 7 compro 1 producto con un valor total de $230.000 y los pago en efectivo*/
+insert into detalle_compra (codigo,precio_producto,unidades,producto_codigo,compra_codigo)values(8,230000,1,9,5);
 
 
 
