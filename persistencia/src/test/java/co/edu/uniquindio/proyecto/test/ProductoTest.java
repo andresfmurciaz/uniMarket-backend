@@ -95,13 +95,49 @@ public class ProductoTest {
     //lista los productos comprados por cada personas en este caso se le mando el codigo  7 que es el usuario "Lola"
     @Test
     @Sql("classpath:usuarios.sql")
-    public void ListarProductosComprados()
+    public void ListarProductosCompradosTest()
     {
         List<Producto> productos = compraRepo.obtenerListaProductosComprados(7);
         productos.forEach(System.out::println);
     }
 
 
+    @Test
+    @Sql("classpath:usuarios.sql")
+    public void NumeroProductosCompradosTest()
+    {
+        Long productos = compraRepo.obtenerNumeroProductosComprados(7);
+        System.out.println(productos);
+    }
+
+    @Test
+    @Sql("classpath:usuarios.sql")
+    public void listarProductosCategoria()
+    {
+        List<Object[]>respuestas= productoRepo.obtenerTotalProductosCategoria();
+        respuestas.forEach(r -> System.out.println(r[0]+": "+r[1]));
+    }
+
+    @Test
+    @Sql("classpath:usuarios.sql")
+    public void productosSinComentarios()
+    {
+        List<Producto> productos= productoRepo.obtenerProductosSinComentarios();
+        productos.forEach(System.out::println);
+        Assertions.assertTrue(productos.get(0).getCodigo() == 5 && productos.get(1).getCodigo() == 6);
+    }
+
+
+
+
+
+    @Test
+    @Sql("classpath:usuarios.sql")
+    public void productosConNombreContenido()
+    {
+        List<Producto> productos= productoRepo.findByNombreContains("avion");
+        productos.forEach(System.out::println);
+    }
 
 
 }
