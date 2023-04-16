@@ -72,7 +72,7 @@ insert into detalle_compra (codigo,precio_producto,unidades,producto_codigo,comp
 insert into detalle_compra (codigo,precio_producto,unidades,producto_codigo,compra_codigo)values(6,130000,1,6,3);
 
 /* -4- el usuario 10 compro 1 producto  con un valor total de $230.000 y los pago con sistecredito*/
-insert into detalle_compra (codigo,precio_producto,unidaes,producto_codigo,compra_codigo)values(7,230000,1,9,4);
+insert into detalle_compra (codigo,precio_producto,unidades,producto_codigo,compra_codigo)values(7,230000,1,9,4);
 
 /* -5- el usuario 7 compro 1 producto con un valor total de $230.000 y los pago en efectivo*/
 insert into detalle_compra (codigo,precio_producto,unidades,producto_codigo,compra_codigo)values(8,230000,1,9,5);

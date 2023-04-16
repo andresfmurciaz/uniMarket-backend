@@ -5,6 +5,7 @@ import co.edu.uniquindio.proyecto.entidades.Categoria;
 import co.edu.uniquindio.proyecto.entidades.Producto;
 import co.edu.uniquindio.proyecto.entidades.Usuario;
 import co.edu.uniquindio.proyecto.repositorios.CategoriaRepo;
+import co.edu.uniquindio.proyecto.repositorios.CompraRepo;
 import co.edu.uniquindio.proyecto.repositorios.ProductoRepo;
 import co.edu.uniquindio.proyecto.repositorios.UsuarioRepo;
 import org.junit.jupiter.api.Assertions;
@@ -34,6 +35,10 @@ public class ProductoTest {
 
     @Autowired
     private CategoriaRepo categoriaRepo;
+
+    @Autowired
+    private CompraRepo compraRepo;
+
 
     @Test
     @Sql("classpath:usuarios.sql")
@@ -84,6 +89,17 @@ public class ProductoTest {
     }
 
 
+
+
+
+    //lista los productos comprados por cada personas en este caso se le mando el codigo  7 que es el usuario "Lola"
+    @Test
+    @Sql("classpath:usuarios.sql")
+    public void ListarProductosComprados()
+    {
+        List<Producto> productos = compraRepo.obtenerListaProductosComprados(7);
+        productos.forEach(System.out::println);
+    }
 
 
 
