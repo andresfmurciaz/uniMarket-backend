@@ -12,6 +12,8 @@ import java.util.List;
 @ToString
 public class Categoria implements Serializable
 {
+
+    //holaaaaaaaa
     @Id
     //autoinclementable
     @GeneratedValue(strategy = GenerationType.IDENTITY)
