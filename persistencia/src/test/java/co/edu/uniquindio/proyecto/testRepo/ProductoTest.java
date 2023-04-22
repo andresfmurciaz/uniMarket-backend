@@ -1,4 +1,4 @@
-package co.edu.uniquindio.proyecto.test;
+package co.edu.uniquindio.proyecto.testRepo;
 
 
 import co.edu.uniquindio.proyecto.entidades.Categoria;
@@ -15,10 +15,7 @@ import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabas
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 import org.springframework.test.context.jdbc.Sql;
 
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
 import java.time.LocalDate;
-import java.util.Date;
 import java.util.List;
 
 @DataJpaTest

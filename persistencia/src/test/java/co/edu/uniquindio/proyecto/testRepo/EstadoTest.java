@@ -1,4 +1,4 @@
-package co.edu.uniquindio.proyecto.test;
+package co.edu.uniquindio.proyecto.testRepo;
 
 import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabase;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;

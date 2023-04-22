@@ -1,4 +1,4 @@
-package co.edu.uniquindio.proyecto.test;
+package co.edu.uniquindio.proyecto.testRepo;
 import co.edu.uniquindio.proyecto.entidades.Usuario;
 import co.edu.uniquindio.proyecto.repositorios.UsuarioRepo;
 import org.junit.jupiter.api.Assertions;

@@ -11,7 +11,7 @@ import java.util.List;
 public interface ProductoRepo extends JpaRepository<Producto,Integer> {
 
 
-    //consulta que me retorna el numero de productos que hay por cada tipo de productos
+    //consulta que me retorna el numero de productos que hay por cada tipo
     @Query("select c.nombre,count(p) from Producto p join p.categoria c group by c")
     List<Object[]> obtenerTotalProductosCategoria();
 
