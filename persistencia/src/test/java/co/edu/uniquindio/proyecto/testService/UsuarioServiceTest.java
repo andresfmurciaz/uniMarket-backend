@@ -3,6 +3,7 @@ package co.edu.uniquindio.proyecto.testService;
 import co.edu.uniquindio.proyecto.PersistenciaApplication;
 import co.edu.uniquindio.proyecto.entidades.Usuario;
 import co.edu.uniquindio.proyecto.service.interfaces.UsuarioService;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -23,13 +24,6 @@ public class UsuarioServiceTest
 
 
 
-    @Test
-    public void loginTest(){
-
-    Usuario usuario = usuarioService.iniciarSesion("");
-
-
-}
 
 
 

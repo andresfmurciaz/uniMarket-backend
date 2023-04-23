@@ -15,7 +15,7 @@ public interface UsuarioService {
 
     void eliminarUsuario(String codigo)throws Exception;
 
-    Usuario iniciarSesion(String email,String password) throws Exception;
+    Usuario iniciarSesion(String email, Integer password) throws Exception;
 
     Usuario recuperarContrasena() throws Exception;
 

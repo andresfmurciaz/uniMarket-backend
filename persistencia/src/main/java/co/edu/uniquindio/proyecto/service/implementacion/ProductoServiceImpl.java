@@ -10,4 +10,63 @@ import java.util.List;
 public class ProductoServiceImpl implements ProductoService {
 
 
+    @Override
+    public Producto publicarProducto() throws Exception {
+        return null;
+    }
+
+    @Override
+    public void comentarProducto() throws Exception {
+
+    }
+
+    @Override
+    public void guardarProductoListaFav() throws Exception {
+
+    }
+
+    @Override
+    public void eliminarProductoListaFav() throws Exception {
+
+    }
+
+    @Override
+    public void agregarAlcarrito() throws Exception {
+
+    }
+
+    @Override
+    public void eliminarDelCarrito() throws Exception {
+
+    }
+
+    @Override
+    public void comprarProductosDeCarrito() throws Exception {
+
+    }
+
+    @Override
+    public List<Producto> buscarProductoXNombre() throws Exception {
+        return null;
+    }
+
+    @Override
+    public List<Producto> buscarProductoXRangoDePrecio() throws Exception {
+        return null;
+    }
+
+    @Override
+    public List<Producto> buscarProductoXCategoria() throws Exception {
+        return null;
+    }
+
+    @Override
+    public Producto buscarProductoXcodigo() throws Exception {
+        return null;
+    }
+
+    @Override
+    public List<Compra> ListarCompras() throws Exception {
+        return null;
+    }
 }
