@@ -9,10 +9,15 @@ public interface UsuarioService {
 -Registrarse y loguearse.
      * */
 
-    Usuario registrarUsuario() throws Exception;
-    Usuario actualizarUsuario() throws  Exception;
-    void eliminarUsuario()throws Exception;
-    Usuario iniciarSesion() throws Exception;
+    Usuario registrarUsuario(Usuario usuario) throws Exception;
+
+    Usuario actualizarUsuario(Usuario usuario) throws  Exception;
+
+    void eliminarUsuario(String codigo)throws Exception;
+
+    Usuario iniciarSesion(String email,String password) throws Exception;
+
     Usuario recuperarContrasena() throws Exception;
 
+    Usuario obtenerUsuario(String codigo) throws Exception;
 }

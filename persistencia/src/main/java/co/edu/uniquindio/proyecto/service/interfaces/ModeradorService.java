@@ -17,16 +17,16 @@ public interface ModeradorService
 
     Moderador iniciarSesion(String email, String password) throws Exception;
 
-    Producto autorizarProducto() throws  Exception;
+    Producto autorizarProducto(Producto producto) throws  Exception;
 
-    Producto prohibirProducto() throws  Exception;
+    Producto prohibirProducto(Producto producto) throws  Exception;
 
     List<Producto> listaProductosEstado() throws Exception;
 
-    Moderador registrarUsuario() throws Exception;
+    Moderador registrarUsuario(Moderador moderador) throws Exception;
 
-    Moderador actualizarUsuario() throws  Exception;
+    Moderador actualizarUsuario(Moderador moderador) throws  Exception;
 
-    void eliminarUsuario()throws Exception;
+    void eliminarUsuario(String codigo)throws Exception;
 
 }
