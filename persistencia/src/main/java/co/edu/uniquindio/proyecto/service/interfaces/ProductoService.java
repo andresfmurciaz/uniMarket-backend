@@ -1,7 +1,6 @@
 package co.edu.uniquindio.proyecto.service.interfaces;
 
-import co.edu.uniquindio.proyecto.entidades.Compra;
-import co.edu.uniquindio.proyecto.entidades.Producto;
+import co.edu.uniquindio.proyecto.entidades.*;
 
 import java.util.List;
 
@@ -20,29 +19,29 @@ public interface ProductoService {
 * */
 
 
-    Producto publicarProducto () throws Exception;
+    Producto publicarProducto (Producto producto) throws Exception;
 
-    void comentarProducto( ) throws Exception;
+    void comentarProducto(Comentario comentario) throws Exception;
 
-    void guardarProductoListaFav() throws  Exception;
+    void guardarProductoListaFav(Producto producto, Usuario usuario) throws  Exception;
 
-    void eliminarProductoListaFav() throws  Exception;
+    void eliminarProductoListaFav(Producto producto, Usuario usuario) throws  Exception;
 
-    void agregarAlcarrito() throws Exception;
+    void agregarAlcarrito(Producto producto, Usuario usuario) throws Exception;
 
-    void eliminarDelCarrito() throws Exception;
+    void eliminarDelCarrito(Producto producto, Usuario usuario) throws Exception;
 
-    void comprarProductosDeCarrito() throws Exception;
+    void comprarProductosDeCarrito(Producto producto, Usuario usuario) throws Exception;
 
-    List<Producto> buscarProductoXNombre() throws Exception;
+    List<Producto> buscarProductoXNombre(String nombre) throws Exception;
 
-    List<Producto> buscarProductoXRangoDePrecio() throws Exception;
+    List<Producto> buscarProductoXRangoDePrecio(float rangoMayor,float rangoMneor) throws Exception;
 
-    List<Producto> buscarProductoXCategoria() throws Exception;
+    List<Producto> buscarProductoXCategoria(Categoria categoria) throws Exception;
 
-    Producto buscarProductoXcodigo() throws Exception;
+    Producto buscarProductoXcodigo(Integer codigo) throws Exception;
 
-    List<Compra> ListarCompras() throws Exception;
+    List<Compra> ListarCompras(Usuario usuario) throws Exception;
 
 
 
