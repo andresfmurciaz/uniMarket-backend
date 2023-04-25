@@ -18,10 +18,10 @@ public interface UsuarioService {
 
     void eliminarUsuario(int codigo)throws Exception;
 
-    List<Usuario> listarUsuarios();
+    List<Usuario> listarUsuarios() throws Exception;
 
 
-    List <Producto>listaFavoritos(String correo);
+    List <Producto>listaFavoritos(String correo) throws Exception;
 
 
 
