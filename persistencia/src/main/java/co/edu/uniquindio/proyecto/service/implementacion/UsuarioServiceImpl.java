@@ -81,6 +81,16 @@ public class UsuarioServiceImpl implements UsuarioService {
         return productoRepo.obtenerProductosFavoritos(correo);
     }
 
+    @Override
+    public Usuario obtenerUsuario(int codigo) throws Exception
+    {
+        Optional<Usuario> buscado = usuarioRepo.findById(codigo);
+        if(buscado.isEmpty()) {throw  new Exception("el codigo del usuairo no existe");}
+
+        //se usa para obtener el usuario del optional
+        return buscado.get();
+    }
+
 
     /*--------------------------------*/
 
@@ -122,8 +132,5 @@ public class UsuarioServiceImpl implements UsuarioService {
         return null;
     }
 
-    @Override
-    public Usuario obtenerUsuario(String codigo) throws Exception {
-        return null;
-    }
+
 }

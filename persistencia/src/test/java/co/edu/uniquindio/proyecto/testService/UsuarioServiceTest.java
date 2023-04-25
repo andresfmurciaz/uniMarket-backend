@@ -18,11 +18,25 @@ import java.security.PublicKey;
 public class UsuarioServiceTest
 {
 
+    //lo que el usuario final va llamar por eso no es igual a los test de los repo
 
     @Autowired
     private UsuarioService usuarioService;
 
 
+    @Test
+    public void registrarTest()
+    {
+        Usuario usuario = new Usuario(1,"andres","andres@gmail.com","2000","chilacoa","3224977434");
+        try {
+          Usuario respuesta =  usuarioService.registrarUsuario(usuario);
+          System.out.println(respuesta);
+          Assertions.assertNotNull(respuesta);
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+
+    }
 
 
 

@@ -20,17 +20,13 @@ public interface UsuarioService {
 
     List<Usuario> listarUsuarios() throws Exception;
 
-
     List <Producto>listaFavoritos(String correo) throws Exception;
 
-
-
-
-
+    Usuario obtenerUsuario(int codigo) throws Exception;
 
     Usuario iniciarSesion(String email, Integer password) throws Exception;
 
     Usuario recuperarContrasena() throws Exception;
 
-    Usuario obtenerUsuario(String codigo) throws Exception;
+
 }
