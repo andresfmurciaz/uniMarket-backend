@@ -6,18 +6,29 @@ import co.edu.uniquindio.proyecto.service.interfaces.UsuarioService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.Optional;
 
 
 @Service
 public class UsuarioServiceImpl implements UsuarioService {
 
-    @Autowired
-    private UsuarioRepo usuarioRepo;
+    //se crea variable para acceder a los repo , no se usa el @wit.. poe que el ide nbos recomienda crear un cosntructor
+    private final UsuarioRepo usuarioRepo;
 
+    public UsuarioServiceImpl(UsuarioRepo usuarioRepo)
+    {
+        this.usuarioRepo = usuarioRepo;
+    }
+
+
+    /*--------------------------------*/
 
     @Override
     public Usuario registrarUsuario(Usuario usuario) throws Exception {
+
+
+
         return null;
     }
 
@@ -30,6 +41,16 @@ public class UsuarioServiceImpl implements UsuarioService {
     public void eliminarUsuario(String codigo) throws Exception {
 
     }
+
+    @Override
+    public List<Usuario> listarUsuarios() {
+        return null;
+    }
+
+
+    /*--------------------------------*/
+
+
 
     @Override
     public Usuario iniciarSesion(String email, Integer password) throws Exception {

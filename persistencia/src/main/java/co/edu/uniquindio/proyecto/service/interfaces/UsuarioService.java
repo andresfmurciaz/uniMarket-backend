@@ -2,6 +2,8 @@ package co.edu.uniquindio.proyecto.service.interfaces;
 
 import co.edu.uniquindio.proyecto.entidades.Usuario;
 
+import java.util.List;
+
 public interface UsuarioService {
 
     /*requerimientos Usuario
@@ -14,6 +16,12 @@ public interface UsuarioService {
     Usuario actualizarUsuario(Usuario usuario) throws  Exception;
 
     void eliminarUsuario(String codigo)throws Exception;
+
+    List<Usuario> listarUsuarios();
+
+
+
+
 
     Usuario iniciarSesion(String email, Integer password) throws Exception;
 
