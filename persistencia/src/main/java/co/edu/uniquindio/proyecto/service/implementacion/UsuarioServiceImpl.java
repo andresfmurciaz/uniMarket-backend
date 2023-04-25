@@ -1,5 +1,6 @@
 package co.edu.uniquindio.proyecto.service.implementacion;
 
+import co.edu.uniquindio.proyecto.entidades.Producto;
 import co.edu.uniquindio.proyecto.entidades.Usuario;
 import co.edu.uniquindio.proyecto.repositorios.UsuarioRepo;
 import co.edu.uniquindio.proyecto.service.interfaces.UsuarioService;
@@ -25,26 +26,33 @@ public class UsuarioServiceImpl implements UsuarioService {
     /*--------------------------------*/
 
     @Override
-    public Usuario registrarUsuario(Usuario usuario) throws Exception {
-
-
-
-        return null;
+    public Usuario registrarUsuario(Usuario usuario) throws Exception
+    {
+        return usuarioRepo.save(usuario);
     }
 
     @Override
-    public Usuario actualizarUsuario(Usuario usuario) throws Exception {
-        return null;
+    public Usuario actualizarUsuario(Usuario usuario) throws Exception
+    {
+        return usuarioRepo.save(usuario);
     }
 
     @Override
-    public void eliminarUsuario(String codigo) throws Exception {
-
+    public void eliminarUsuario(int codigo) throws Exception
+    {
+        usuarioRepo.deleteById(codigo);
     }
 
     @Override
     public List<Usuario> listarUsuarios() {
-        return null;
+        return usuarioRepo.findAll();
+    }
+
+
+
+    @Override
+    public List<Producto> listaFavoritos(String correo) {
+        return
     }
 
 

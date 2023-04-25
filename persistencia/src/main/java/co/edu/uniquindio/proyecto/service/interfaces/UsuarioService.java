@@ -1,5 +1,6 @@
 package co.edu.uniquindio.proyecto.service.interfaces;
 
+import co.edu.uniquindio.proyecto.entidades.Producto;
 import co.edu.uniquindio.proyecto.entidades.Usuario;
 
 import java.util.List;
@@ -15,9 +16,13 @@ public interface UsuarioService {
 
     Usuario actualizarUsuario(Usuario usuario) throws  Exception;
 
-    void eliminarUsuario(String codigo)throws Exception;
+    void eliminarUsuario(int codigo)throws Exception;
 
     List<Usuario> listarUsuarios();
+
+
+    List <Producto>listaFavoritos(String correo);
+
 
 
 
