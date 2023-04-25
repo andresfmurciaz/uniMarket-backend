@@ -32,6 +32,13 @@ public class UsuarioServiceImpl implements UsuarioService {
     @Override
     public Usuario registrarUsuario(Usuario usuario) throws Exception
     {
+        //busca el usuario para que valide que la cedula y email no este repetida
+        Optional<Usuario> buscado = usuarioRepo.findById(usuario.getCodigo());
+        if(buscado.isPresent()) {throw  new Exception("el codigo del usuairo ya existe");}
+
+        buscado = usuarioRepo.findByEmail(usuario.getEmail());
+        if(buscado.isPresent()) {throw  new Exception("el email del usuario ya existe");}
+
         return usuarioRepo.save(usuario);
     }
 
