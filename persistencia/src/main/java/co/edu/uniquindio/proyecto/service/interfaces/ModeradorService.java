@@ -30,6 +30,7 @@ public interface ModeradorService
 
 
 
+    Moderador obtenerModerador(int codigo) throws Exception;
 
     List<Producto> listaProductosEstado() throws Exception;
 

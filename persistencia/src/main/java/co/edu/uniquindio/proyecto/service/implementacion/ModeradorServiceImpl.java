@@ -62,7 +62,10 @@ public class ModeradorServiceImpl implements ModeradorService
 
     }
 
-
+    @Override
+    public Moderador obtenerModerador(int codigo) throws Exception {
+        return null;
+    }
 
 
     @Override
