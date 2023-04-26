@@ -28,19 +28,16 @@ public class ProductoServiceImpl implements ProductoService {
         this.usuarioRepo = usuarioRepo;
         this.productoRepo = productoRepo;
     }
+
     @Override
     public Producto registrarProducto(Producto producto) throws Exception {
-
-
         Optional<Producto> buscado = productoRepo.findById(producto.getCodigo());
         if(buscado.isPresent()) {throw  new Exception("el codigo del producto ya existe");}
-
         return productoRepo.save(producto);
     }
 
     @Override
     public Producto actualizarProducto(Producto producto) throws Exception {
-
         Optional<Producto> buscado = productoRepo.findById(producto.getCodigo());
         if(buscado.isPresent()) {throw  new Exception("el codigo del producto ya existe");}
 

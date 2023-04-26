@@ -13,7 +13,7 @@ import java.util.List;
 public class Categoria implements Serializable
 {
 
-    //holaaaaaaaa
+
     @Id
     //autoinclementable
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -30,6 +30,7 @@ public class Categoria implements Serializable
         this.nombre = nombre;
 
     }
+
 
     @Override
     public String toString() {
