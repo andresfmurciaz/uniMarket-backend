@@ -56,6 +56,7 @@ public interface ProductoService {
 
     List<Compra> ListarCompras(Usuario usuario) throws Exception;
 
+     Producto obtenerProducto(int codigo) throws Exception;
 
 
 }

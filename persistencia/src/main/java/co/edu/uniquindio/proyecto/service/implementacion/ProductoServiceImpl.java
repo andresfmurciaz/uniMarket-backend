@@ -120,4 +120,9 @@ public class ProductoServiceImpl implements ProductoService {
     public List<Compra> ListarCompras(Usuario usuario) throws Exception {
         return null;
     }
+
+    @Override
+    public Producto obtenerProducto(int codigo) throws Exception {
+        return null;
+    }
 }
