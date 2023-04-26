@@ -17,13 +17,6 @@ import java.util.Random;
 @ToString
 public class Usuario extends Persona implements Serializable
 {
-
-        private static final String CHARACTERS = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
-        private static final int LENGTH = 10;
-
-        private static final Random RANDOM = new SecureRandom();
-
-
         @Column(nullable = false , length = 200)
         private String direccion;
         @Column(nullable = false , length = 10)
@@ -45,13 +38,6 @@ public class Usuario extends Persona implements Serializable
 
 
 
-        public static String generarRandomString() {
-                StringBuilder sb = new StringBuilder(LENGTH);
-                for (int i = 0; i < LENGTH; i++) {
-                        sb.append(CHARACTERS.charAt(RANDOM.nextInt(CHARACTERS.length())));
-                }
-                return sb.toString();
-        }
 
 
         @Override
