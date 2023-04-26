@@ -15,18 +15,31 @@ public interface ModeradorService
 -La página del moderador (una vez haga login) debe mostrarle la lista de todos los productos según el estado (sin revisar, autorizados y denegados).
 */
 
+
+
+
+
+
+    Moderador registrarModerador(Moderador moderador) throws Exception;
+
+    Moderador actualizarModerador(Moderador moderador) throws  Exception;
+
+    void eliminarModerador(int codigo)throws Exception;
+
+    List<Moderador> listaModeradores() throws Exception;
+
+
+
+
+    List<Producto> listaProductosEstado() throws Exception;
+
+
     Moderador iniciarSesion(String email, String password) throws Exception;
 
     Producto autorizarProducto(Producto producto) throws  Exception;
 
     Producto prohibirProducto(Producto producto) throws  Exception;
 
-    List<Producto> listaProductosEstado() throws Exception;
 
-    Moderador registrarUsuario(Moderador moderador) throws Exception;
-
-    Moderador actualizarUsuario(Moderador moderador) throws  Exception;
-
-    void eliminarUsuario(String codigo)throws Exception;
 
 }

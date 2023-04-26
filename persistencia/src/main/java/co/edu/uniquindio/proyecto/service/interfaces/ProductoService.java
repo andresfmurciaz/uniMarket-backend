@@ -19,6 +19,19 @@ public interface ProductoService {
 * */
 
 
+
+
+   Producto registrarProducto(Producto producto) throws Exception;
+
+    Producto actualizarProducto(Producto producto) throws  Exception;
+
+    void eliminarProducto(int codigo)throws Exception;
+
+    List<Producto> listarProductos() throws Exception;
+
+
+
+
     Producto publicarProducto (Producto producto) throws Exception;
 
     void comentarProducto(Comentario comentario) throws Exception;

@@ -29,4 +29,7 @@ public interface ProductoRepo extends JpaRepository<Producto,Integer> {
     List<Producto> obtenerProductosFavoritos(String email);
 
 
+
+
+
 }

@@ -45,11 +45,9 @@ public class UsuarioServiceImpl implements UsuarioService {
     @Override
     public Usuario actualizarUsuario(Usuario usuario) throws Exception
     {
-        //busca el usuario para que valide que la cedula y email no este repetida
-        Optional<Usuario> buscado = usuarioRepo.findById(usuario.getCodigo());
-        if(buscado.isPresent()) {throw  new Exception("el codigo del usuairo ya existe");}
+        //busca el usuario para que valide  email no este repetida
 
-        buscado = usuarioRepo.findByEmail(usuario.getEmail());
+        Optional<Usuario> buscado = usuarioRepo.findByEmail(usuario.getEmail());
         if(buscado.isPresent()) {throw  new Exception("el email del usuario ya existe");}
 
         return usuarioRepo.save(usuario);
@@ -59,7 +57,7 @@ public class UsuarioServiceImpl implements UsuarioService {
     public void eliminarUsuario(int codigo) throws Exception
     {
         //busca el usuario para que valide que la cedula si exista
-        Optional<Usuario> buscado = usuarioRepo.findById(codigo);
+        Optional<Usuario> buscado = usuarioRepo.findByCodigo(codigo);
         if(buscado.isEmpty()) {throw  new Exception("el codigo del usuario no existe");}
 
         usuarioRepo.deleteById(codigo);

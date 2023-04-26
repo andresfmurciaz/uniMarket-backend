@@ -10,6 +10,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.security.PublicKey;
+import java.util.List;
 
 //que clase se esta probando?
 @SpringBootTest(classes = PersistenciaApplication.class)
@@ -32,6 +33,44 @@ public class UsuarioServiceTest
           Usuario respuesta =  usuarioService.registrarUsuario(usuario);
           System.out.println(respuesta);
           Assertions.assertNotNull(respuesta);
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+
+    }
+
+    @Test
+    public void actualizarTest()
+    {
+        Usuario usuario = new Usuario(1,"andrea","andres@gmail.com","2000","chilacoaa","3224977434");
+        try {
+            Usuario respuesta =  usuarioService.actualizarUsuario(usuario);
+            System.out.println(respuesta);
+            Assertions.assertNotNull(respuesta);
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    @Test
+    public void eliminarUsuario()
+    {
+        try {
+            usuarioService.eliminarUsuario(3);
+        } catch (Exception e) {
+            //me imprime la exception
+            e.printStackTrace();
+            //para forzar un error
+            Assertions.assertTrue(false);
+        }
+    }
+
+    @Test
+    public void ListarUsuario()
+    {
+        try {
+            List<Usuario> lista = usuarioService.listarUsuarios();
+            lista.forEach(System.out::println);
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
