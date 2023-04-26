@@ -77,20 +77,16 @@ insert into detalle_compra (codigo,precio_producto,unidades,producto_codigo,comp
 /* -5- el usuario 7 compro 1 producto con un valor total de $230.000 y los pago en efectivo*/
 insert into detalle_compra (codigo,precio_producto,unidades,producto_codigo,compra_codigo)values(8,230000,1,9,5);
 
-
-
-
-
 /*-----------IMAGEN---------------------*/
 insert into imagen(id_imagen,ruta,producto_codigo)values (1,"rutaimg",1);
 insert into imagen(id_imagen,ruta,producto_codigo)values (2,"rutaimg",1);
 insert into imagen(id_imagen,ruta,producto_codigo)values (3,"rutaimg",1);
 
 /*-----------COMENTARIO---------------------*/
-insert into comentario(codigo,fecha_creacion,mensaje,producto_codigo,usuario_codigo) values (1,'2023-04-08',"hola este producto es muy bueno",1,7);;
-insert into comentario(codigo,fecha_creacion,mensaje,producto_codigo,usuario_codigo) values (2,'2023-04-08',"hola este producto es muy bueno",2,8);;
-insert into comentario(codigo,fecha_creacion,mensaje,producto_codigo,usuario_codigo) values (3,'2023-04-08',"hola este producto es muy bueno",3,9);;
-insert into comentario(codigo,fecha_creacion,mensaje,producto_codigo,usuario_codigo) values (4,'2023-04-08',"hola este producto es muy bueno",4,9);;
+insert into comentario(codigo,fecha_creacion,mensaje,producto_codigo,usuario_codigo) values (1,'2023-04-08',"hola este producto es muy bueno",1,7);
+insert into comentario(codigo,fecha_creacion,mensaje,producto_codigo,usuario_codigo) values (2,'2023-04-08',"hola este producto es muy bueno",2,8);
+insert into comentario(codigo,fecha_creacion,mensaje,producto_codigo,usuario_codigo) values (3,'2023-04-08',"hola este producto es muy bueno",3,9);
+insert into comentario(codigo,fecha_creacion,mensaje,producto_codigo,usuario_codigo) values (4,'2023-04-08',"hola este producto es muy bueno",4,9);
 
 /*-----------ESTADO---------------------*/
 
