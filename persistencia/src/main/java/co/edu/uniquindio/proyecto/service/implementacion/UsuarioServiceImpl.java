@@ -129,8 +129,12 @@ public class UsuarioServiceImpl implements UsuarioService {
 */
 
     @Override
-    public Usuario recuperarContrasena() throws Exception {
-        return null;
+    public Usuario recuperarContrasena(Usuario usuario) throws Exception {
+        Optional <Usuario> buscado = usuarioRepo.findByEmail(usuario.getEmail());
+        if(buscado.isEmpty()) {throw  new Exception("el email del usuario no existe");
+
+
+
     }
 
 

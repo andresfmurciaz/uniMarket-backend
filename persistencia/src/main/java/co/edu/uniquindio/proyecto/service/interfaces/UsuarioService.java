@@ -24,7 +24,7 @@ public interface UsuarioService {
 
     Usuario iniciarSesion(String email, String password) throws Exception;
 
-    Usuario recuperarContrasena() throws Exception;
+    Usuario recuperarContrasena(Usuario usuario) throws Exception;
 
     List <Producto>listaFavoritos(String correo) throws Exception;
 
