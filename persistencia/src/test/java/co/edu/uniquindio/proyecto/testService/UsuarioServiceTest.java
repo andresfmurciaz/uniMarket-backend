@@ -96,7 +96,7 @@ public class UsuarioServiceTest
     public void listaProductosFav(){
         try {
             List<Producto> productosFavoritos =usuarioService.listaFavoritos("Andres felipe");
-            System.out.println(productosFavoritos);
+            
         } catch (Exception e) {
             e.printStackTrace();
         }
