@@ -77,6 +77,7 @@ public class UsuarioServiceImpl implements UsuarioService {
         if(buscado.isEmpty()) {throw  new Exception("el email del usuario no existe");}
 
         return productoRepo.obtenerProductosFavoritos(correo);
+
     }
 
     @Override
@@ -95,15 +96,17 @@ public class UsuarioServiceImpl implements UsuarioService {
 
 
     @Override
-    public Usuario iniciarSesion(String email, Integer password) throws Exception {
+    public Usuario iniciarSesion(String email, String password) throws Exception {
 
         //llamo al repo para que me busque por medio del email y la contra
         Optional<Usuario> usuario =usuarioRepo.findByEmailAndPassword(email,password);
+
         //miro si el arreglo esta vacio y si lo esta tiro una exception
         if(usuario.isEmpty())
         {
             throw new Exception("los datos de autenticacion son incorrectos");
         }
+
         return usuario.get();
 
     }

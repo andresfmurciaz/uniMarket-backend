@@ -1,6 +1,7 @@
 package co.edu.uniquindio.proyecto.testService;
 
 import co.edu.uniquindio.proyecto.PersistenciaApplication;
+import co.edu.uniquindio.proyecto.entidades.Producto;
 import co.edu.uniquindio.proyecto.entidades.Usuario;
 import co.edu.uniquindio.proyecto.service.interfaces.UsuarioService;
 import org.junit.jupiter.api.Assertions;
@@ -77,7 +78,29 @@ public class UsuarioServiceTest
 
     }
 
+    @Test
+    public void iniciarSesion()
+    {
+        try
+        {
+            Usuario usuario = usuarioService.iniciarSesion("Andres Felipe","123");
+            System.out.println(usuario);
+            Assertions.assertNotNull(usuario);
+        } catch (Exception e)
+        {
+            e.printStackTrace();
+        }
+    }
 
+    @Test
+    public void listaProductosFav(){
+        try {
+            List<Producto> productosFavoritos =usuarioService.listaFavoritos("Andres felipe");
+            System.out.println(productosFavoritos);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
 
 
 }

@@ -27,7 +27,7 @@ public interface ProductoRepo extends JpaRepository<Producto,Integer> {
 
 
     //obter los productos fav
-    @Query("select p from Usuario u , IN (u.productos) p where u.email =: email")
+    @Query("select p from Usuario u , IN (u.productos) p where u.email = :email")
     List<Producto> obtenerProductosFavoritos(String email);
 
 
