@@ -1,4 +1,5 @@
 package co.edu.uniquindio.proyecto.repositorios;
+import co.edu.uniquindio.proyecto.entidades.Moderador;
 import co.edu.uniquindio.proyecto.entidades.Producto;
 import co.edu.uniquindio.proyecto.entidades.Usuario;
 import org.springframework.data.jpa.repository.JpaRepository;
@@ -6,6 +7,7 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
+import java.util.Optional;
 
 @Repository
 public interface ProductoRepo extends JpaRepository<Producto,Integer> {
@@ -29,7 +31,7 @@ public interface ProductoRepo extends JpaRepository<Producto,Integer> {
     List<Producto> obtenerProductosFavoritos(String email);
 
 
-
+    Optional<Producto> findByCodigo(int codigo);
 
 
 }

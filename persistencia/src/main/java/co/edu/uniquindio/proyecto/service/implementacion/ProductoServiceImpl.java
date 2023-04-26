@@ -31,13 +31,11 @@ public class ProductoServiceImpl implements ProductoService {
     @Override
     public Producto registrarProducto(Producto producto) throws Exception {
 
-       
+
         Optional<Producto> buscado = productoRepo.findById(producto.getCodigo());
         if(buscado.isPresent()) {throw  new Exception("el codigo del producto ya existe");}
 
         return productoRepo.save(producto);
-
-
     }
 
     @Override
@@ -52,12 +50,19 @@ public class ProductoServiceImpl implements ProductoService {
     @Override
     public void eliminarProducto(int codigo) throws Exception {
 
+        Optional<Producto> buscado = productoRepo.findByCodigo(codigo);
+        if(buscado.isEmpty()) {throw  new Exception("el codigo del producto no existe");}
+
+        productoRepo.deleteById(codigo);
     }
 
     @Override
     public List<Producto> listarProductos() throws Exception {
-        return null;
+        return productoRepo.findAll();
     }
+
+
+
 
     @Override
     public Producto publicarProducto(Producto producto) throws Exception {
