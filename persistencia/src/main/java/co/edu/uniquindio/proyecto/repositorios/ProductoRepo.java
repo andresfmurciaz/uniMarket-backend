@@ -23,11 +23,9 @@ public interface ProductoRepo extends JpaRepository<Producto,Integer> {
     List<Producto> obtenerProductosSinComentarios();
 
 
-    //obtener productos con comentarios-me devolvera loaproductos 
+    //obtener productos con comentarios-me devolvera loaproductos
     @Query("select p.comentarios from  Producto p  ")
     List<Producto> obtenerProductosConComentarios();
-
-
 
 
     //obtener los productos que en el nombre contenga el sring digitado
@@ -38,7 +36,7 @@ public interface ProductoRepo extends JpaRepository<Producto,Integer> {
     @Query("select p from Usuario u , IN (u.productos) p where u.email = :email")
     List<Producto> obtenerProductosFavoritos(String email);
 
-
+    //obtener los productos que en el codigo contenga el codigo digitado
     Optional<Producto> findByCodigo(int codigo);
 
 
