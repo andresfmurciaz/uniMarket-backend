@@ -18,6 +18,11 @@ public interface ProductoRepo extends JpaRepository<Producto,Integer> {
     List<Object[]> obtenerTotalProductosCategoria();
 
 
+    //consulta que me retorna el numero de imagenes que hay por cada productos
+    @Query("select c.ruta,count(p) from Producto p join p.imagenes c group by c")
+    List<Object[]> obtenerTotalProductosImagenes();
+
+
     //obtener productos sin comentarios-me devolvera loaproductos cuya lista de comentarios este vacia
     @Query("select p from  Producto p where p.comentarios is empty ")
     List<Producto> obtenerProductosSinComentarios();
@@ -38,6 +43,8 @@ public interface ProductoRepo extends JpaRepository<Producto,Integer> {
 
     //obtener los productos que en el codigo contenga el codigo digitado
     Optional<Producto> findByCodigo(int codigo);
+
+
 
 
 }
