@@ -22,7 +22,15 @@ public interface ProductoRepo extends JpaRepository<Producto,Integer> {
     @Query("select p from  Producto p where p.comentarios is empty ")
     List<Producto> obtenerProductosSinComentarios();
 
-//obtener los productos que en el nombre contenga el sring digitado
+
+    //obtener productos con comentarios-me devolvera loaproductos 
+    @Query("select p.comentarios from  Producto p  ")
+    List<Producto> obtenerProductosConComentarios();
+
+
+
+
+    //obtener los productos que en el nombre contenga el sring digitado
     List<Producto> findByNombreContains(String nombre);
 
 

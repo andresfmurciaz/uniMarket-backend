@@ -29,9 +29,6 @@ public interface ProductoService {
 
     List<Producto> listarProductos() throws Exception;
 
-
-
-
     Producto publicarProducto (Producto producto) throws Exception;
 
     void comentarProducto(Comentario comentario) throws Exception;
