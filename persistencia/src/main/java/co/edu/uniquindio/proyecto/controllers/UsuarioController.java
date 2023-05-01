@@ -20,7 +20,6 @@ public class UsuarioController
 {
     private final UsuarioService  usuarioServicio;
 
-
     @PostMapping("/crear")
     public ResponseEntity<MensajeDTO> crearUsuario(@Valid @RequestBody Usuario usuario) throws Exception
     {
@@ -34,6 +33,7 @@ public class UsuarioController
         return ResponseEntity.status(HttpStatus.OK).body(new MensajeDTO(HttpStatus.OK, false, "El usuario se actualizó correctamente"));
     }
 
+    //eliminart
     @DeleteMapping("/eliminar/{codigoUsuario}")
     public ResponseEntity<MensajeDTO> eliminarUsuario(@PathVariable int codigoUsuario) throws Exception{
         usuarioServicio.eliminarUsuario(codigoUsuario);

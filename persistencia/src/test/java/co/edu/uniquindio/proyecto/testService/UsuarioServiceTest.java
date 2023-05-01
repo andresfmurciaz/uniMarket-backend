@@ -29,7 +29,7 @@ public class UsuarioServiceTest
     @Test
     public void registrarTest()
     {
-        Usuario usuario = new Usuario(1,"andres","andres@gmail.com","2000","chilacoa","3224977434");
+        Usuario usuario = new Usuario(11,"andres camilo","andrescamilo@gmail.com","2000","chilacoa","3224977434");
         try {
           Usuario respuesta =  usuarioService.registrarUsuario(usuario);
           System.out.println(respuesta);
