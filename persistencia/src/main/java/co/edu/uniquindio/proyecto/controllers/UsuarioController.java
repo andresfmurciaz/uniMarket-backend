@@ -19,7 +19,7 @@ import javax.validation.Valid;
 public class UsuarioController
 {
     private final UsuarioService  usuarioServicio;
-
+//crear
     @PostMapping("/crear")
     public ResponseEntity<MensajeDTO> crearUsuario(@Valid @RequestBody Usuario usuario) throws Exception
     {
