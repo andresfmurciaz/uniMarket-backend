@@ -40,6 +40,7 @@ public class UsuarioController
         return ResponseEntity.status(HttpStatus.OK).body(new MensajeDTO(HttpStatus.OK, false, "Usuario eliminado correctamente"));
     }
 
+    //obtener
     @GetMapping("/obtener/{codigoUsuario}")
     public ResponseEntity<MensajeDTO> obtenerUsuario(@PathVariable int codigoUsuario) throws Exception{
         usuarioServicio.obtenerUsuario(codigoUsuario);
