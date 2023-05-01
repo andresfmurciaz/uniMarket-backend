@@ -26,7 +26,7 @@ public class UsuarioController
         usuarioServicio.registrarUsuario(usuario);
         return ResponseEntity.status(HttpStatus.CREATED).body(new MensajeDTO(HttpStatus.CREATED, false, "El usuario se creó correctamente"));
     }
-
+//actuaizar
     @PutMapping("/actualizar/{codigoUsuario}")
     public ResponseEntity<MensajeDTO> actualizarUsuario(@PathVariable int codigoUsuario, @Valid @RequestBody Usuario usuario)throws Exception{
         usuarioServicio.actualizarUsuario(usuario);
