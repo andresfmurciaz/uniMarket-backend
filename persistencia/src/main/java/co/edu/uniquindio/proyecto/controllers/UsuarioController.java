@@ -14,13 +14,13 @@ import lombok.AllArgsConstructor;
 import javax.validation.Valid;
 
 @RestController
-@RequestMapping("/api/usuarios")
+@RequestMapping("/api/usuario")
 @AllArgsConstructor
 public class UsuarioController
 {
     private final UsuarioService  usuarioServicio;
 
-    @PostMapping("/creare")
+    @PostMapping("/crear")
     public ResponseEntity<MensajeDTO> crearUsuario(@Valid @RequestBody Usuario usuario) throws Exception
     {
         usuarioServicio.registrarUsuario(usuario);
