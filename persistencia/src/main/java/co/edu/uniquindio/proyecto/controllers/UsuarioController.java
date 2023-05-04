@@ -20,7 +20,7 @@ public class UsuarioController
 {
     private final UsuarioService  usuarioServicio;
 
-    @PostMapping("/crear")
+    @PostMapping("/creare")
     public ResponseEntity<MensajeDTO> crearUsuario(@Valid @RequestBody Usuario usuario) throws Exception
     {
         usuarioServicio.registrarUsuario(usuario);
