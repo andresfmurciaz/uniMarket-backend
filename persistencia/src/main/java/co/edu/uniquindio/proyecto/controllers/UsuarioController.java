@@ -14,7 +14,7 @@ import lombok.AllArgsConstructor;
 import javax.validation.Valid;
 
 @RestController
-@RequestMapping("/api/usuario")
+@RequestMapping("/api/usuariof")
 @AllArgsConstructor
 public class UsuarioController
 {
