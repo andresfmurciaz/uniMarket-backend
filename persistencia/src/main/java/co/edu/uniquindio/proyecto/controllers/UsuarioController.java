@@ -33,7 +33,7 @@ public class UsuarioController
         return ResponseEntity.status(HttpStatus.OK).body(new MensajeDTO(HttpStatus.OK, false, "El usuario se actualizó correctamente"));
     }
 
-
+//hhgh
     @DeleteMapping("/eliminar/{codigoUsuario}")
     public ResponseEntity<MensajeDTO> eliminarUsuario(@PathVariable int codigoUsuario) throws Exception{
         usuarioServicio.eliminarUsuario(codigoUsuario);
