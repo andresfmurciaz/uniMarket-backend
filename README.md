@@ -21,10 +21,4 @@ Este proyecto está desarrollado en Java y utiliza una base de datos MySQL para 
 - **Base de Datos:** MySQL
 - **Estructura del Proyecto:** Arquitectura basada en capas (DTO, Controladores, Entidades, Repositorios, Servicios)
 
-## Ejemplo de Código Destacado
 
-```java
-// Inserta un nuevo registro en la base de datos
-public void insertarNuevoRegistro(Entidad entidad) {
-    // Código de inserción en la base de datos
-}
